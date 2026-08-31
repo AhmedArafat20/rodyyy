@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
 <title>To Roddy 🌸 — A Book of Us</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&family=Reem+Kufi&display=swap');
 
 :root{
@@ -68,6 +69,7 @@ h1,h2,h3,.display{
   color:#fff;
 }
 
+
 /* ============================================================
    FLOATING BUBBLES
 ============================================================ */
@@ -101,6 +103,7 @@ h1,h2,h3,.display{
 }
 
 @keyframes floatUp{
+
   0%{
     transform:translateY(0) translateX(0) scale(1);
     opacity:0;
@@ -122,16 +125,20 @@ h1,h2,h3,.display{
     transform:translateY(-115vh) translateX(-15px) scale(0.9);
     opacity:0;
   }
+
 }
 
 @media(prefers-reduced-motion:reduce){
+
   *{
     animation-duration:0.001ms!important;
     animation-iteration-count:1!important;
     transition-duration:0.001ms!important;
     scroll-behavior:auto!important;
   }
+
 }
+
 
 /* ============================================================
    PASSWORD GATE
@@ -181,6 +188,7 @@ h1,h2,h3,.display{
 }
 
 @keyframes gateIn{
+
   from{
     opacity:0;
     transform:translateY(40px) scale(0.94) rotate(-1deg);
@@ -190,6 +198,7 @@ h1,h2,h3,.display{
     opacity:1;
     transform:translateY(0) scale(1) rotate(0deg);
   }
+
 }
 
 .gate-icon{
@@ -200,8 +209,15 @@ h1,h2,h3,.display{
 }
 
 @keyframes sway{
-  0%,100%{transform:rotate(-6deg);}
-  50%{transform:rotate(6deg);}
+
+  0%,100%{
+    transform:rotate(-6deg);
+  }
+
+  50%{
+    transform:rotate(6deg);
+  }
+
 }
 
 .gate-card h1{
@@ -293,11 +309,25 @@ h1,h2,h3,.display{
 }
 
 @keyframes shake{
-  10%,90%{transform:translateX(-2px);}
-  20%,80%{transform:translateX(4px);}
-  30%,50%,70%{transform:translateX(-8px);}
-  40%,60%{transform:translateX(8px);}
+
+  10%,90%{
+    transform:translateX(-2px);
+  }
+
+  20%,80%{
+    transform:translateX(4px);
+  }
+
+  30%,50%,70%{
+    transform:translateX(-8px);
+  }
+
+  40%,60%{
+    transform:translateX(8px);
+  }
+
 }
+
 
 /* ============================================================
    MAIN SITE
@@ -323,6 +353,7 @@ h1,h2,h3,.display{
   margin:0 auto;
   padding:0 20px;
 }
+
 
 /* ============================================================
    HERO
@@ -413,6 +444,7 @@ h1,h2,h3,.display{
 }
 
 @keyframes bounceDown{
+
   0%,100%{
     transform:translateY(0) rotate(45deg);
   }
@@ -420,6 +452,7 @@ h1,h2,h3,.display{
   50%{
     transform:translateY(8px) rotate(45deg);
   }
+
 }
 
 .floating-heart{
@@ -430,6 +463,7 @@ h1,h2,h3,.display{
 }
 
 @keyframes driftHeart{
+
   0%,100%{
     transform:translateY(0) rotate(0deg);
   }
@@ -437,7 +471,9 @@ h1,h2,h3,.display{
   50%{
     transform:translateY(-18px) rotate(8deg);
   }
+
 }
+
 
 /* ============================================================
    SECTION HEADINGS
@@ -461,6 +497,7 @@ h1,h2,h3,.display{
   max-width:520px;
 }
 
+
 /* ============================================================
    MEMORY CARDS
 ============================================================ */
@@ -473,6 +510,7 @@ h1,h2,h3,.display{
 }
 
 .memory-card{
+
   position:relative;
 
   border-radius:28px;
@@ -504,11 +542,13 @@ h1,h2,h3,.display{
   transform:translateY(0);
 }
 
+
 /* ============================================================
    CARD FACE
 ============================================================ */
 
 .card-face{
+
   padding:34px 26px;
 
   cursor:pointer;
@@ -549,6 +589,7 @@ h1,h2,h3,.display{
 }
 
 .card-face .card-cta{
+
   margin-left:auto;
 
   font-size:13px;
@@ -571,6 +612,7 @@ h1,h2,h3,.display{
 }
 
 .memory-card.special .card-face .card-cta{
+
   background:linear-gradient(
     120deg,
     var(--gold),
@@ -593,6 +635,7 @@ h1,h2,h3,.display{
 }
 
 .bubble-deco{
+
   position:absolute;
   right:-10px;
   top:-10px;
@@ -612,11 +655,13 @@ h1,h2,h3,.display{
   filter:blur(1px);
 }
 
+
 /* ============================================================
    EXPANDED CONTENT
 ============================================================ */
 
 .card-content{
+
   max-height:0;
   overflow:hidden;
 
@@ -627,7 +672,7 @@ h1,h2,h3,.display{
 }
 
 .memory-card.open .card-content{
-  max-height:5000px;
+  max-height:10000px;
 }
 
 .card-inner{
@@ -642,6 +687,7 @@ h1,h2,h3,.display{
 }
 
 .close-btn{
+
   border:none;
 
   background:rgba(255,255,255,0.6);
@@ -664,11 +710,13 @@ h1,h2,h3,.display{
   filter:saturate(1.1);
 }
 
+
 /* ============================================================
    PHOTO GRID
 ============================================================ */
 
 .photo-grid{
+
   display:grid;
 
   grid-template-columns:1fr;
@@ -681,6 +729,7 @@ h1,h2,h3,.display{
 }
 
 .photo-item{
+
   position:relative;
 
   width:100%;
@@ -714,6 +763,7 @@ h1,h2,h3,.display{
 }
 
 .photo-item.revealed{
+
   opacity:1;
 
   transform:
@@ -723,6 +773,7 @@ h1,h2,h3,.display{
 }
 
 .photo-item img{
+
   width:100%;
   height:auto;
 
@@ -734,6 +785,7 @@ h1,h2,h3,.display{
 }
 
 .photo-item video{
+
   width:100%;
   height:auto;
 
@@ -748,6 +800,7 @@ h1,h2,h3,.display{
 }
 
 .photo-item .frame-shine{
+
   position:absolute;
   inset:0;
 
@@ -763,11 +816,13 @@ h1,h2,h3,.display{
   grid-column:span 1;
 }
 
+
 /* ============================================================
    MEMORY MESSAGE
 ============================================================ */
 
 .memory-msg{
+
   background:rgba(255,255,255,0.5);
 
   border-radius:18px;
@@ -786,11 +841,13 @@ h1,h2,h3,.display{
   font-size:15.5px;
 }
 
+
 /* ============================================================
    NOW PLAYING
 ============================================================ */
 
 .now-playing{
+
   display:flex;
   align-items:center;
   gap:10px;
@@ -803,6 +860,7 @@ h1,h2,h3,.display{
 }
 
 .now-playing .eq{
+
   display:flex;
   gap:2px;
   align-items:flex-end;
@@ -810,6 +868,7 @@ h1,h2,h3,.display{
 }
 
 .now-playing .eq span{
+
   width:3px;
 
   background:var(--rose);
@@ -828,6 +887,7 @@ h1,h2,h3,.display{
 }
 
 @keyframes eq{
+
   0%,100%{
     height:4px;
   }
@@ -835,7 +895,9 @@ h1,h2,h3,.display{
   50%{
     height:14px;
   }
+
 }
+
 
 /* ============================================================
    SPECIAL CARD
@@ -846,6 +908,7 @@ h1,h2,h3,.display{
 }
 
 .sparkle-layer{
+
   position:absolute;
   inset:0;
 
@@ -855,6 +918,7 @@ h1,h2,h3,.display{
 }
 
 .sparkle{
+
   position:absolute;
 
   width:6px;
@@ -872,6 +936,7 @@ h1,h2,h3,.display{
 }
 
 @keyframes sparkle{
+
   0%,100%{
     opacity:0;
     transform:scale(0);
@@ -881,13 +946,16 @@ h1,h2,h3,.display{
     opacity:1;
     transform:scale(1);
   }
+
 }
+
 
 /* ============================================================
    FINALE
 ============================================================ */
 
 .finale{
+
   position:relative;
 
   margin:40px 0 0;
@@ -911,6 +979,7 @@ h1,h2,h3,.display{
 }
 
 .finale::before{
+
   content:"";
 
   position:absolute;
@@ -927,19 +996,25 @@ h1,h2,h3,.display{
 }
 
 .finale-icon{
+
   font-size:40px;
   display:block;
   margin-bottom:18px;
 }
 
 .finale h2{
+
   font-size:clamp(26px,5vw,36px);
+
   color:var(--rose-deep);
+
   margin:0 0 22px;
 }
 
 .finale-msg{
+
   max-width:600px;
+
   margin:0 auto 26px;
 
   font-size:15.5px;
@@ -949,11 +1024,14 @@ h1,h2,h3,.display{
 }
 
 .finale-msg.arabic{
+
   max-width:600px;
+
   font-size:16.5px;
 }
 
 .appreciation-row{
+
   display:flex;
 
   flex-wrap:wrap;
@@ -968,6 +1046,7 @@ h1,h2,h3,.display{
 }
 
 .pill{
+
   background:rgba(255,255,255,0.55);
 
   border:1px solid rgba(255,255,255,0.7);
@@ -986,6 +1065,7 @@ h1,h2,h3,.display{
 }
 
 .prayer-box{
+
   max-width:560px;
 
   margin:34px auto 0;
@@ -1007,19 +1087,27 @@ h1,h2,h3,.display{
 }
 
 .prayer-box .arabic{
+
   font-size:17px;
+
   line-height:2.1;
+
   color:var(--plum);
 }
 
 .prayer-box .stars{
+
   font-size:18px;
+
   margin-bottom:10px;
+
   letter-spacing:6px;
+
   opacity:0.8;
 }
 
 .signature{
+
   margin-top:44px;
 
   font-family:'Playfair Display',serif;
@@ -1034,6 +1122,7 @@ h1,h2,h3,.display{
 }
 
 footer{
+
   text-align:center;
 
   padding:26px 16px 40px;
@@ -1043,6 +1132,7 @@ footer{
   opacity:0.45;
 }
 
+
 /* ============================================================
    MOBILE
 ============================================================ */
@@ -1050,44 +1140,58 @@ footer{
 @media(max-width:600px){
 
   .card-face{
+
     padding:26px 18px;
+
     gap:12px;
   }
 
   .card-face .card-num{
+
     min-width:38px;
+
     font-size:27px;
   }
 
   .card-face .card-text h3{
+
     font-size:18px;
   }
 
   .card-face .card-text p{
+
     font-size:12px;
   }
 
   .card-face .card-cta{
+
     padding:8px 12px;
+
     font-size:11px;
   }
 
   .card-inner{
+
     padding:6px 16px 28px;
   }
 
   .photo-grid{
+
     gap:12px;
   }
 
   .photo-item{
+
     border-radius:14px;
   }
 
   .photo-item .frame-shine{
+
     border-radius:14px;
   }
+
 }
+
 </style>
 
 </head>
@@ -1096,7 +1200,9 @@ footer{
 
 <div class="bubble-field" id="bubbleField"></div>
 
-<!-- ================= PASSWORD GATE ================= -->
+<!-- ============================================================
+     PASSWORD GATE
+============================================================ -->
 
 <div id="gate">
 
@@ -1138,598 +1244,817 @@ footer{
 
 </div>
 
-<!-- ================= MAIN SITE ================= -->
+<!-- ============================================================
+     MAIN SITE
+============================================================ -->
 
 <div id="site">
 
-  <!-- HERO -->
+<!-- ============================================================
+     HERO
+============================================================ -->
 
-  <section class="hero">
+<section class="hero">
 
-    <span
-      class="floating-heart"
-      style="top:14%;left:10%;"
-    >🌸</span>
+<span
+class="floating-heart"
+style="top:14%;left:10%;"
 
-    <span
-      class="floating-heart"
-      style="top:22%;right:12%;animation-delay:1s;"
-    >💫</span>
+> 🌸</span>
 
-    <span
-      class="floating-heart"
-      style="bottom:18%;left:16%;animation-delay:2s;"
-    >🎀</span>
+<span
+class="floating-heart"
+style="top:22%;right:12%;animation-delay:1s;"
 
-    <span
-      class="floating-heart"
-      style="bottom:26%;right:10%;animation-delay:1.6s;"
-    >✨</span>
+> 💫</span>
 
-    <div class="hero-tag">
-      a book of us, made with love
-    </div>
+<span
+class="floating-heart"
+style="bottom:18%;left:16%;animation-delay:2s;"
 
-    <h1>
-      To Roddy, <em>my person</em>
-    </h1>
+> 🎀</span>
 
-    <p class="sub">
-      Not a birthday card. Not a romance novel. Just every ridiculous,
-      beautiful, chaotic memory we've built together — kept safe in one
-      place, for the friend who somehow became family.
-    </p>
+<span
+class="floating-heart"
+style="bottom:26%;right:10%;animation-delay:1.6s;"
 
-    <div class="hero-scroll">
-      scroll to open our memories
-      <span class="arrow"></span>
-    </div>
+> ✨</span>
 
-  </section>
+  <div class="hero-tag">
+    a book of us, made with love
+  </div>
 
-  <div class="wrap">
+  <h1>
+    To Roddy, <em>my person</em>
+  </h1>
 
-    <div class="section-intro">
+  <p class="sub">
+    Not a birthday card. Not a romance novel. Just every ridiculous,
+    beautiful, chaotic memory we've built together — kept safe in one
+    place, for the friend who somehow became family.
+  </p>
 
-      <h2>
-        Our Memory Cards 🎞️
-      </h2>
+  <div class="hero-scroll">
+
+    scroll to open our memories
+
+    <span class="arrow"></span>
+
+  </div>
+
+</section>
+
+<div class="wrap">
+
+<div class="section-intro">
+
+  <h2>
+    Our Memory Cards 🎞️
+  </h2>
+
+  <p>
+    Tap a card to open it. Each one has its own song, its own photos,
+    and its own chapter of us. Take your time — there's no rush in a
+    friendship like ours.
+  </p>
+
+</div>
+
+<div class="cards-stack" id="cardsStack">
+
+<!-- ============================================================
+     CARD 1
+     30 PHOTOS + VIDEO
+     VIDEO FIRST
+============================================================ -->
+
+<article class="memory-card" data-card>
+
+  <div class="card-face" data-open>
+
+    <div class="bubble-deco"></div>
+
+    <span class="card-num">01</span>
+
+    <div class="card-text">
+
+      <h3>
+        البداية... يوم قابلتك 🌸
+      </h3>
 
       <p>
-        Tap a card to open it. Each one has its own song, its own photos,
-        and its own chapter of us. Take your time — there's no rush in a
-        friendship like ours.
+        How it all started — completely by accident,
+        completely on purpose.
       </p>
 
     </div>
 
+    <span class="card-cta">
+      Open
+    </span>
 
-    <div class="cards-stack" id="cardsStack">
+  </div>
 
-      <!-- ============================================================
-           CARD 1
-      ============================================================= -->
+  <div class="card-content">
 
-      <article class="memory-card" data-card>
+    <div class="card-inner">
 
-        <div class="card-face" data-open>
+      <div class="close-row">
 
-          <div class="bubble-deco"></div>
+        <button
+          class="close-btn"
+          data-close
+          type="button"
+        >
+          ✕
+        </button>
 
-          <span class="card-num">01</span>
+      </div>
 
-          <div class="card-text">
 
-            <h3>
-              البداية... يوم قابلتك 🌸
-            </h3>
+      <audio data-song loop preload="none">
+        <source src="song1.mp3" type="audio/mpeg">
+      </audio>
 
-            <p>
-              How it all started — completely by accident,
-              completely on purpose.
-            </p>
 
-          </div>
+      <div class="photo-grid" data-grid>
 
-          <span class="card-cta">
-            Open
-          </span>
 
-        </div>
+        <!-- VIDEO FIRST -->
 
+        <div class="photo-item video-item">
 
-        <div class="card-content">
-
-          <div class="card-inner">
-
-            <div class="close-row">
-              <button class="close-btn" data-close>
-                ✕
-              </button>
-            </div>
-
-            <audio data-song loop preload="none">
-              <source src="song1.mp3" type="audio/mpeg">
-            </audio>
-
-            <div class="photo-grid" data-grid>
-
-              <div class="photo-item video-item">
-                <video controls preload="none">
-                  <source src="video01.mp4" type="video/mp4">
-                </video>
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo01.jpg" alt="Memory 1" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo02.jpg" alt="Memory 2" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo03.jpg" alt="Memory 3" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo04.jpg" alt="Memory 4" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo05.jpg" alt="Memory 5" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo06.jpg" alt="Memory 6" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo07.jpg" alt="Memory 7" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo08.jpg" alt="Memory 8" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo09.jpg" alt="Memory 9" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo10.jpg" alt="Memory 10" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo11.jpg" alt="Memory 11" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo12.jpg" alt="Memory 12" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo13.jpg" alt="Memory 13" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo14.jpg" alt="Memory 14" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo15.jpg" alt="Memory 15" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo16.jpg" alt="Memory 16" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo17.jpg" alt="Memory 17" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo18.jpg" alt="Memory 18" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo19.jpg" alt="Memory 19" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo20.jpg" alt="Memory 20" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo21.jpg" alt="Memory 21" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo22.jpg" alt="Memory 22" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo23.jpg" alt="Memory 23" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo24.jpg" alt="Memory 24" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo25.jpg" alt="Memory 25" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo26.jpg" alt="Memory 26" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo27.jpg" alt="Memory 27" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo28.jpg" alt="Memory 28" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo29.jpg" alt="Memory 29" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo30.jpg" alt="Memory 30" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- ============================================================
-           CARD 2
-      ============================================================= -->
-
-      <article class="memory-card" data-card>
-
-        <div class="card-face" data-open>
-
-          <div class="bubble-deco"></div>
-
-          <span class="card-num">02</span>
-
-          <div class="card-text">
-
-            <h3>
-              جنان الجامعة والمذاكرة اللي مخلصتش 📚
-            </h3>
-
-            <p>
-              Deadlines, panic, coffee, and somehow still
-              laughing at 2am.
-            </p>
-
-          </div>
-
-          <span class="card-cta">
-            Open
-          </span>
-
-        </div>
-
-
-        <div class="card-content">
-
-          <div class="card-inner">
-
-            <div class="close-row">
-              <button class="close-btn" data-close>
-                ✕
-              </button>
-            </div>
-
-            <audio data-song loop preload="none">
-              <source src="song1.mp3" type="audio/mpeg">
-            </audio>
-
-            <div class="photo-grid" data-grid>
-
-              <div class="photo-item">
-                <img src="photo31.jpg" alt="Memory 31" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo32.jpg" alt="Memory 32" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo33.jpg" alt="Memory 33" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo34.jpg" alt="Memory 34" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo35.jpg" alt="Memory 35" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo36.jpg" alt="Memory 36" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- ============================================================
-           CARD 3
-      ============================================================= -->
-
-      <article class="memory-card" data-card>
-
-        <div class="card-face" data-open>
-
-          <div class="bubble-deco"></div>
-
-          <span class="card-num">03</span>
-
-          <div class="card-text">
-
-            <h3>
-              أفضل صديقة في الدنيا 💗👑
-            </h3>
-
-            <p>
-              The chapter that doesn't really have an ending.
-            </p>
-
-          </div>
-
-          <span class="card-cta">
-            Open ✨
-          </span>
-
-        </div>
-
-
-        <div class="card-content">
-
-          <div
-            class="card-inner"
-            style="position:relative;"
+          <video
+            controls
+            preload="none"
           >
 
-            <div
-              class="sparkle-layer"
-              id="sparkleLayer"
-            ></div>
+            <source
+              src="video01.mp4"
+              type="video/mp4"
+            >
 
-            <div class="close-row">
+          </video>
 
-              <button
-                class="close-btn"
-                data-close
-              >
-                ✕
-              </button>
-
-            </div>
-
-            <audio data-song loop preload="none">
-              <source src="song05.mp3" type="audio/mpeg">
-            </audio>
-
-            <div class="photo-grid" data-grid>
-
-              <!-- VIDEO FIRST -->
-
-              <div class="photo-item video-item">
-                <video controls preload="none">
-                  <source src="video02.mp4" type="video/mp4">
-                </video>
-
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo37.jpg" alt="Memory 37" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo38.jpg" alt="Memory 38" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo39.jpg" alt="Memory 39" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo40.jpg" alt="Memory 40" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo41.jpg" alt="Memory 41" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo42.jpg" alt="Memory 42" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-              <div class="photo-item">
-                <img src="photo43.jpg" alt="Memory 43" loading="lazy">
-                <div class="frame-shine"></div>
-              </div>
-
-            </div>
-
-            <p class="memory-msg">
-              There's a version of my life story where nothing makes sense
-              without you in it. You're the friend who shows up without
-              being asked, who tells me the truth even when it's not easy,
-              and who somehow still finds me funny after all these years.
-              Best friend doesn't even feel like a big enough title for
-              what you are to me.
-            </p>
-
-            <div class="now-playing">
-
-              <div class="eq">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <span data-now-playing-label>
-                song05.mp3 — the song that is basically "us"
-              </span>
-
-            </div>
-
-          </div>
+          <div class="frame-shine"></div>
 
         </div>
 
-      </article>
+
+        <!-- 30 PHOTOS -->
+
+        <div class="photo-item">
+          <img src="photo01.jpg" alt="Memory 1" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo02.jpg" alt="Memory 2" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo03.jpg" alt="Memory 3" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo04.jpg" alt="Memory 4" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo05.jpg" alt="Memory 5" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo06.jpg" alt="Memory 6" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo07.jpg" alt="Memory 7" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo08.jpg" alt="Memory 8" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo09.jpg" alt="Memory 9" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo10.jpg" alt="Memory 10" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo11.jpg" alt="Memory 11" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo12.jpg" alt="Memory 12" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo13.jpg" alt="Memory 13" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo14.jpg" alt="Memory 14" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo15.jpg" alt="Memory 15" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo16.jpg" alt="Memory 16" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo17.jpg" alt="Memory 17" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo18.jpg" alt="Memory 18" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo19.jpg" alt="Memory 19" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo20.jpg" alt="Memory 20" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo21.jpg" alt="Memory 21" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo22.jpg" alt="Memory 22" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo23.jpg" alt="Memory 23" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo24.jpg" alt="Memory 24" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo25.jpg" alt="Memory 25" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo26.jpg" alt="Memory 26" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo27.jpg" alt="Memory 27" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo28.jpg" alt="Memory 28" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo29.jpg" alt="Memory 29" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+        <div class="photo-item">
+          <img src="photo30.jpg" alt="Memory 30" loading="lazy">
+          <div class="frame-shine"></div>
+        </div>
+
+
+      </div>
+
 
     </div>
 
   </div>
 
-  <!-- ============================================================
-       FINALE
-  ============================================================= -->
+</article>
 
-  <section class="finale">
+<!-- ============================================================
+     CARD 2
+     6 PHOTOS
+============================================================ -->
 
-    <span class="finale-icon">
-      🌷
-    </span>
+<article class="memory-card" data-card>
 
-    <h2>
-      Before you close this book...
-    </h2>
+  <div class="card-face" data-open>
 
-    <p class="finale-msg">
-      Roddy, thank you for every memory, every laugh, every late-night
-      call that turned into a two-hour conversation about nothing and
-      everything. Thank you for being the kind of friend people spend
-      a lifetime hoping to find. This isn't a goodbye — it's just a
-      page-break. There's so much more of "us" still to write.
-    </p>
+    <div class="bubble-deco"></div>
 
-    <div class="appreciation-row">
+    <span class="card-num">02</span>
 
-      <span class="pill">
-        Thank you for staying 💗
-      </span>
+    <div class="card-text">
 
-      <span class="pill">
-        Thank you for the laughs 😂
-      </span>
+      <h3>
+        جنان الجامعة والمذاكرة اللي مخلصتش 📚
+      </h3>
 
-      <span class="pill">
-        Thank you for believing in me 🌟
-      </span>
-
-      <span class="pill">
-        Thank you for just... being you 🌸
-      </span>
-
-    </div>
-
-    <div class="prayer-box">
-
-      <div class="stars">
-        ✦ ✦ ✦
-      </div>
-
-      <p class="arabic">
-        يا رب يكون طريقك مفروش بالنجاح والسعادة يا دكتورة روديـنا 🩺💫
-        يا رب توصلي لكل حلم بتحلمي بيه، ويكون بجد كل تعب ودموع المذاكرة
-        سبب فخرك يوم ما تلبسي الروب الأبيض ده. يا رب حد ما يضحك عليكي
-        غير أنا، وحد ما يفرح بيكي غير اللي بيحبك بجد.
-        وربنا يخليكي ليا، ويخلي صحبتنا دي لحد الجنة يا رب 🤍
+      <p>
+        Deadlines, panic, coffee, and somehow still
+        laughing at 2am.
       </p>
 
     </div>
 
-    <p
-      class="finale-msg"
-      style="margin-top:30px;"
-    >
-      You're going to be an incredible doctor —
-      not because you're the smartest person I know
-      (although, fine, you are), but because you actually care.
-      The world needs more people like you holding it together,
-      and I already know your patients are going to be lucky
-      to have you. I already am.
-    </p>
+    <span class="card-cta">
+      Open
+    </span>
 
-    <div class="signature">
-      — always your person, no matter what chapter we're on
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-inner">
+
+      <div class="close-row">
+
+        <button
+          class="close-btn"
+          data-close
+          type="button"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <audio data-song loop preload="none">
+
+        <source
+          src="song02.mp3"
+          type="audio/mpeg"
+        >
+
+      </audio>
+
+
+      <div class="photo-grid" data-grid>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo31.jpg"
+            alt="Memory 31"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo32.jpg"
+            alt="Memory 32"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo33.jpg"
+            alt="Memory 33"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo34.jpg"
+            alt="Memory 34"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo35.jpg"
+            alt="Memory 35"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo36.jpg"
+            alt="Memory 36"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+      </div>
+
+
+      <p class="memory-msg">
+
+        Deadlines, panic, coffee, and somehow still
+        laughing at 2am. Somehow we survived all of it.
+
+      </p>
+
+
     </div>
 
-  </section>
+  </div>
 
-  <footer>
-    made with 💗 for Roddy · a private little corner of the internet, just for us
-  </footer>
+</article>
+
+<!-- ============================================================
+     CARD 3
+     7 PHOTOS + VIDEO
+     VIDEO FIRST
+============================================================ -->
+
+<article class="memory-card special" data-card>
+
+  <div class="card-face" data-open>
+
+    <div class="bubble-deco"></div>
+
+    <span class="card-num">03</span>
+
+    <div class="card-text">
+
+      <h3>
+        أفضل صديقة في الدنيا 💗👑
+      </h3>
+
+      <p>
+        The chapter that doesn't really have an ending.
+      </p>
+
+    </div>
+
+    <span class="card-cta">
+      Open ✨
+    </span>
+
+  </div>
+
+  <div class="card-content">
+
+    <div
+      class="card-inner"
+      style="position:relative;"
+    >
+
+      <div
+        class="sparkle-layer"
+        id="sparkleLayer"
+      ></div>
+
+
+      <div class="close-row">
+
+        <button
+          class="close-btn"
+          data-close
+          type="button"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <audio data-song loop preload="none">
+
+        <source
+          src="song03.mp3"
+          type="audio/mpeg"
+        >
+
+      </audio>
+
+
+      <div class="photo-grid" data-grid>
+
+
+        <!-- VIDEO FIRST -->
+
+        <div class="photo-item video-item">
+
+          <video
+            controls
+            preload="none"
+          >
+
+            <source
+              src="video03.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <!-- 7 PHOTOS -->
+
+        <div class="photo-item">
+
+          <img
+            src="photo37.jpg"
+            alt="Memory 37"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo38.jpg"
+            alt="Memory 38"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo39.jpg"
+            alt="Memory 39"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo40.jpg"
+            alt="Memory 40"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo41.jpg"
+            alt="Memory 41"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo42.jpg"
+            alt="Memory 42"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="photo43.jpg"
+            alt="Memory 43"
+            loading="lazy"
+          >
+
+          <div class="frame-shine"></div>
+
+        </div>
+
+
+      </div>
+
+
+      <p class="memory-msg">
+
+        There's a version of my life story where nothing
+        makes sense without you in it. You're the friend
+        who shows up without being asked, who tells me the
+        truth even when it's not easy, and who somehow still
+        finds me funny after all these years.
+
+        Best friend doesn't even feel like a big enough
+        title for what you are to me.
+
+      </p>
+
+
+      <div class="now-playing">
+
+        <div class="eq">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+        <span data-now-playing-label>
+          song03.mp3 — the song that is basically "us"
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</article>
+
+</div>
+
+</div>
+
+<!-- ============================================================
+     FINALE
+============================================================ -->
+
+<section class="finale">
+
+  <span class="finale-icon">
+    🌷
+  </span>
+
+  <h2>
+    Before you close this book...
+  </h2>
+
+  <p class="finale-msg">
+
+    Roddy, thank you for every memory, every laugh,
+    every late-night call that turned into a two-hour
+    conversation about nothing and everything.
+
+    Thank you for being the kind of friend people spend
+    a lifetime hoping to find.
+
+    This isn't a goodbye — it's just a page-break.
+    There's so much more of "us" still to write.
+
+  </p>
+
+  <div class="appreciation-row">
+
+    <span class="pill">
+      Thank you for staying 💗
+    </span>
+
+    <span class="pill">
+      Thank you for the laughs 😂
+    </span>
+
+    <span class="pill">
+      Thank you for believing in me 🌟
+    </span>
+
+    <span class="pill">
+      Thank you for just... being you 🌸
+    </span>
+
+  </div>
+
+  <div class="prayer-box">
+
+    <div class="stars">
+      ✦ ✦ ✦
+    </div>
+
+    <p class="arabic">
+
+      يا رب يكون طريقك مفروش بالنجاح والسعادة يا دكتورة رودينا 🩺💫
+      يا رب توصلي لكل حلم بتحلمي بيه، ويكون بجد كل تعب ودموع المذاكرة
+      سبب فخرك يوم ما تلبسي الروب الأبيض ده.
+
+      يا رب حد ما يضحك عليكي غير أنا،
+      وحد ما يفرح بيكي غير اللي بيحبك بجد.
+
+      وربنا يخليكي ليا،
+      ويخلي صحبتنا دي لحد الجنة يا رب 🤍
+
+    </p>
+
+  </div>
+
+  <p
+    class="finale-msg"
+    style="margin-top:30px;"
+  >
+
+    You're going to be an incredible doctor —
+    not because you're the smartest person I know
+    (although, fine, you are), but because you actually care.
+
+    The world needs more people like you holding it together,
+    and I already know your patients are going to be lucky
+    to have you.
+
+    I already am.
+
+  </p>
+
+  <div class="signature">
+
+    — always your person, no matter what chapter we're on
+
+  </div>
+
+</section>
+
+<footer>
+
+made with 💗 for Roddy ·
+a private little corner of the internet, just for us
+
+</footer>
 
 </div>
 
 <script>
+
 
 /* ============================================================
    1) AMBIENT BUBBLES
@@ -1754,6 +2079,7 @@ footer{
       14 + Math.random()*46;
 
     b.style.width=size+'px';
+
     b.style.height=size+'px';
 
     b.style.left=
@@ -1766,6 +2092,7 @@ footer{
       (Math.random()*12)+'s';
 
     field.appendChild(b);
+
   }
 
 })();
@@ -1800,7 +2127,9 @@ footer{
 
 
   function normalize(str){
+
     return str.replace(/[^0-9]/g,'');
+
   }
 
 
@@ -1809,14 +2138,18 @@ footer{
     let digits =
       normalize(input.value);
 
+
     if(
       digits.length>=3 &&
       digits[2]==='0'
     ){
+
       digits =
         digits.slice(0,2)+
         digits.slice(3);
+
     }
+
 
     digits =
       digits.slice(0,7);
@@ -1834,7 +2167,9 @@ footer{
         '/' +
         digits.slice(3);
 
-    }else if(digits.length>2){
+    }
+
+    else if(digits.length>2){
 
       formatted =
         digits.slice(0,2)+
@@ -1853,6 +2188,7 @@ footer{
 
     e.preventDefault();
 
+
     const digits =
       normalize(input.value);
 
@@ -1865,13 +2201,17 @@ footer{
 
       document.body.style.overflow='auto';
 
-    }else{
+    }
+
+    else{
 
       error.textContent=
         "That's not it... try again 🤔 (hint: her birthday)";
 
+
       const card =
         document.querySelector('.gate-card');
+
 
       card.classList.remove('shake');
 
@@ -1898,6 +2238,7 @@ footer{
 
   const observer =
     new IntersectionObserver(
+
       (entries)=>{
 
         entries.forEach(entry=>{
@@ -1913,14 +2254,18 @@ footer{
         });
 
       },
+
       {
         threshold:0.15
       }
+
     );
 
 
   cards.forEach(card=>{
+
     observer.observe(card);
+
   });
 
 })();
@@ -1928,7 +2273,10 @@ footer{
 
 /* ============================================================
    4) MEMORY CARDS
-   FIXED VERSION
+   (fixed: always opens at first photo/frame, never jumps
+   the page scroll, and fully resets whichever card was
+   previously open — audio AND video — regardless of which
+   card that was.)
 ============================================================ */
 
 (function memoryCards(){
@@ -1937,9 +2285,13 @@ footer{
     document.querySelectorAll('[data-card]');
 
 
-  /* ============================================================
+  /* ---------------------------------------------------------
      MEDIA RESET
-  ============================================================ */
+     Pauses + rewinds a card's audio and every video inside it
+     back to frame/second zero. Previously only audio was ever
+     reset here, so a scrubbed video kept playing (or stayed
+     mid-scrub) after switching cards — that's fixed below.
+  --------------------------------------------------------- */
 
   function resetCardMedia(card,{play=false}={}){
 
@@ -1972,12 +2324,13 @@ footer{
   }
 
 
-  /* ============================================================
+  /* ---------------------------------------------------------
      PHOTO REVEAL
-  ============================================================ */
+  --------------------------------------------------------- */
 
   const photoObserver =
     new IntersectionObserver(
+
       (entries)=>{
 
         entries.forEach(entry=>{
@@ -1995,10 +2348,12 @@ footer{
         });
 
       },
+
       {
         threshold:0.05,
         rootMargin:'0px 0px -20px 0px'
       }
+
     );
 
 
@@ -2026,15 +2381,29 @@ footer{
   }
 
 
-  /* ============================================================
+  /* ---------------------------------------------------------
      SCROLL-STABLE ACCORDION
-     
-     THIS IS THE IMPORTANT FIX
-  ============================================================ */
 
-  const lastHeights =
-    new WeakMap();
+     The old approach snapshotted window.scrollY once and
+     restored that same absolute pixel value two frames later.
+     That breaks the moment a PREVIOUSLY-open card sits above
+     the viewport: .card-content collapses over a .75s CSS
+     max-height transition, so its height keeps shrinking long
+     after the one-time restore already fired — the page then
+     visibly drifts/jumps once that tall card finishes
+     collapsing (this is what looked like "jumping to another
+     card" or "to the bottom").
 
+     Fix: continuously compensate scroll for the *entire*
+     transition using a ResizeObserver on every card's
+     .card-content. Whenever a card's rendered height changes
+     while it's positioned above the viewport, shift scroll by
+     the exact delta immediately. Cards at/below the viewport
+     are left alone so their own open/close animation still
+     plays normally.
+  --------------------------------------------------------- */
+
+  const lastHeights = new WeakMap();
 
   if('ResizeObserver' in window){
 
@@ -2043,8 +2412,7 @@ footer{
 
         entries.forEach(entry=>{
 
-          const el =
-            entry.target;
+          const el = entry.target;
 
           const newHeight =
             entry.contentRect.height;
@@ -2052,44 +2420,20 @@ footer{
           const prevHeight =
             lastHeights.get(el);
 
+          lastHeights.set(el,newHeight);
 
-          lastHeights.set(
-            el,
-            newHeight
-          );
-
-
-          if(prevHeight === undefined){
-            return;
-          }
-
+          if(prevHeight===undefined) return;
 
           const delta =
             newHeight - prevHeight;
 
+          if(!delta) return;
 
-          if(!delta){
-            return;
-          }
+          // Only compensate for cards above the viewport —
+          // a card resizing in/near view should visibly animate.
+          if(el.getBoundingClientRect().top < 0){
 
-
-          /*
-             لو الكارت اللي بيتغير ارتفاعه
-             موجود فوق الـ viewport فقط،
-             نعوض فرق الارتفاع مباشرة.
-
-             كده لو Card 1 بيقفل وCard 3
-             مفتوح/ظاهر تحت، الصفحة مش هتتحرك.
-          */
-
-          if(
-            el.getBoundingClientRect().top < 0
-          ){
-
-            window.scrollBy(
-              0,
-              delta
-            );
+            window.scrollBy(0,delta);
 
           }
 
@@ -2119,16 +2463,11 @@ footer{
   }
 
 
-  /* ============================================================
+  /* ---------------------------------------------------------
      OPEN CARD
-  ============================================================ */
+  --------------------------------------------------------- */
 
   function openCard(card){
-
-    /*
-      Close every other card WITHOUT
-      changing scroll position manually.
-    */
 
     allCards.forEach(otherCard=>{
 
@@ -2145,53 +2484,37 @@ footer{
     });
 
 
-    /*
-      Open selected card.
-    */
-
     card.classList.add('open');
 
 
-    /*
-      Reset its photos so they reveal again.
-    */
-
+    // Always resets photo reveal + rewinds audio/video to
+    // the start, so every open lands on the first image/frame
+    // no matter which card was open before this one.
     resetCardPhotos(card);
 
-
-    /*
-      Reset media and start its audio.
-      Videos always return to frame 0.
-    */
-
-    resetCardMedia(
-      card,
-      {play:true}
-    );
+    resetCardMedia(card,{play:true});
 
   }
 
 
-  /* ============================================================
+  /* ---------------------------------------------------------
      CLOSE CARD
-  ============================================================ */
+  --------------------------------------------------------- */
 
   function closeCard(card){
 
     card.classList.remove('open');
 
-
     resetCardMedia(card);
-
 
     resetCardPhotos(card);
 
   }
 
 
-  /* ============================================================
+  /* ---------------------------------------------------------
      CLICK EVENTS
-  ============================================================ */
+  --------------------------------------------------------- */
 
   allCards.forEach(card=>{
 
@@ -2206,13 +2529,13 @@ footer{
       'click',
       function(){
 
-        if(
-          card.classList.contains('open')
-        ){
+        if(card.classList.contains('open')){
 
           closeCard(card);
 
-        }else{
+        }
+
+        else{
 
           openCard(card);
 
@@ -2253,6 +2576,7 @@ footer{
   const layer =
     document.getElementById('sparkleLayer');
 
+
   if(!layer)return;
 
 
@@ -2275,6 +2599,57 @@ footer{
     layer.appendChild(s);
 
   }
+
+})();
+
+
+/* ============================================================
+   6) STOP VIDEO/AUDIO FROM OTHER CARDS
+============================================================ */
+
+(function mediaControl(){
+
+  const cards =
+    document.querySelectorAll('[data-card]');
+
+
+  cards.forEach(card=>{
+
+    card.querySelectorAll('video').forEach(video=>{
+
+      video.addEventListener('play',function(){
+
+        cards.forEach(otherCard=>{
+
+          if(otherCard !== card){
+
+            otherCard
+              .querySelectorAll('video')
+              .forEach(otherVideo=>{
+
+                otherVideo.pause();
+
+              });
+
+
+            const audio =
+              otherCard.querySelector('[data-song]');
+
+            if(audio){
+
+              audio.pause();
+
+            }
+
+          }
+
+        });
+
+      });
+
+    });
+
+  });
 
 })();
 
