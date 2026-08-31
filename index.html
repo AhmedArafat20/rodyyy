@@ -1,2647 +1,2274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
-<title>To Roddy 🌸 — A Book of Us</title>
+    <title>✨Rodyy✨</title>
 
-<style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&family=Reem+Kufi&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&family=Reem+Kufi&display=swap');
+      :root {
+        --cream: #fff7f2;
+        --blush: #ffbfda;
+        --blush-deep: #f786b0;
+        --lavender: #d9c6f5;
+        --rose: #d6317e;
+        --rose-deep: #931d57;
+        --plum: #5b2c6f;
+        --gold: #e7b93b;
+        --gold-soft: #f6dfa0;
+        --ink: #3a2438;
+        --glass: rgba(255, 255, 255, 0.35);
+        --glass-brd: rgba(255, 255, 255, 0.55);
+        --shadow-soft: 0 20px 60px rgba(142, 42, 87, 0.18);
+      }
 
-:root{
-  --cream:#FFF7F2;
-  --blush:#FFBFDA;
-  --blush-deep:#F786B0;
-  --lavender:#D9C6F5;
-  --rose:#D6317E;
-  --rose-deep:#931D57;
-  --plum:#5B2C6F;
-  --gold:#E7B93B;
-  --gold-soft:#F6DFA0;
-  --ink:#3A2438;
-  --glass:rgba(255,255,255,0.35);
-  --glass-brd:rgba(255,255,255,0.55);
-  --shadow-soft:0 20px 60px rgba(142,42,87,0.18);
-}
+      * {
+        box-sizing: border-box;
+      }
 
-*{
-  box-sizing:border-box;
-}
+      html {
+        scroll-behavior: auto;
+        overflow-anchor: none;
+      }
 
-html{
-  scroll-behavior:smooth;
-  overflow-anchor:none;
-}
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Quicksand", sans-serif;
+        color: var(--ink);
 
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:'Quicksand',sans-serif;
-  color:var(--ink);
+        background:
+          radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 191, 218, 0.95),
+            transparent 48%
+          ),
+          radial-gradient(
+            circle at 85% 10%,
+            rgba(217, 198, 245, 0.6),
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 90%,
+            rgba(247, 134, 176, 0.8),
+            transparent 58%
+          ),
+          linear-gradient(160deg, #fff7f2 0%, #ffe3ee 45%, #f5ecff 100%);
 
-  background:
-    radial-gradient(circle at 15% 20%,rgba(255,191,218,0.95),transparent 48%),
-    radial-gradient(circle at 85% 10%,rgba(217,198,245,0.6),transparent 50%),
-    radial-gradient(circle at 50% 90%,rgba(247,134,176,0.8),transparent 58%),
-    linear-gradient(160deg,#FFF7F2 0%,#FFE3EE 45%,#F5ECFF 100%);
+        background-attachment: fixed;
+        overflow-x: hidden;
+        position: relative;
+        overflow-anchor: none;
+      }
 
-  background-attachment:fixed;
-  overflow-x:hidden;
-  position:relative;
-  overflow-anchor:none;
-}
+      h1,
+      h2,
+      h3,
+      .display {
+        font-family: "Playfair Display", serif;
+      }
 
-h1,h2,h3,.display{
-  font-family:'Playfair Display',serif;
-}
+      .arabic {
+        font-family: "Reem Kufi", "Quicksand", sans-serif;
+        direction: rtl;
+        text-align: right;
+        line-height: 2;
+      }
 
-.arabic{
-  font-family:'Reem Kufi','Quicksand',sans-serif;
-  direction:rtl;
-  text-align:right;
-  line-height:2;
-}
+      ::selection {
+        background: var(--blush-deep);
+        color: #fff;
+      }
 
-::selection{
-  background:var(--blush-deep);
-  color:#fff;
-}
-
-
-/* ============================================================
+      /* ============================================================
    FLOATING BUBBLES
 ============================================================ */
 
-.bubble-field{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  overflow:hidden;
-}
+      .bubble-field {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
 
-.bubble{
-  position:absolute;
-  bottom:-120px;
-  border-radius:50%;
+      .bubble {
+        position: absolute;
+        bottom: -120px;
+        border-radius: 50%;
 
-  background:
-    linear-gradient(
-      160deg,
-      rgba(255,255,255,0.75),
-      rgba(255,214,228,0.25)
-    );
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 214, 228, 0.25)
+        );
 
-  box-shadow:
-    inset 0 0 20px rgba(255,255,255,0.6),
-    0 10px 30px rgba(194,68,122,0.12);
+        box-shadow:
+          inset 0 0 20px rgba(255, 255, 255, 0.6),
+          0 10px 30px rgba(194, 68, 122, 0.12);
 
-  animation:floatUp linear infinite;
-  backdrop-filter:blur(1px);
-}
+        animation: floatUp linear infinite;
+        backdrop-filter: blur(1px);
+      }
 
-@keyframes floatUp{
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) translateX(0) scale(1);
+          opacity: 0;
+        }
 
-  0%{
-    transform:translateY(0) translateX(0) scale(1);
-    opacity:0;
-  }
+        10% {
+          opacity: 0.85;
+        }
 
-  10%{
-    opacity:0.85;
-  }
+        50% {
+          transform: translateY(-55vh) translateX(20px) scale(1.05);
+        }
 
-  50%{
-    transform:translateY(-55vh) translateX(20px) scale(1.05);
-  }
+        90% {
+          opacity: 0.6;
+        }
 
-  90%{
-    opacity:0.6;
-  }
+        100% {
+          transform: translateY(-115vh) translateX(-15px) scale(0.9);
+          opacity: 0;
+        }
+      }
 
-  100%{
-    transform:translateY(-115vh) translateX(-15px) scale(0.9);
-    opacity:0;
-  }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
 
-}
-
-@media(prefers-reduced-motion:reduce){
-
-  *{
-    animation-duration:0.001ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:0.001ms!important;
-    scroll-behavior:auto!important;
-  }
-
-}
-
-
-/* ============================================================
+      /* ============================================================
    PASSWORD GATE
 ============================================================ */
 
-#gate{
-  position:fixed;
-  inset:0;
-  z-index:100;
+      #gate {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-  padding:24px;
+        padding: 24px;
 
-  background:
-    radial-gradient(circle at 30% 20%,rgba(255,214,228,0.95),transparent 50%),
-    radial-gradient(circle at 80% 80%,rgba(217,198,245,0.9),transparent 55%),
-    linear-gradient(160deg,#FFF3F8,#F3E9FF);
+        background:
+          radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 214, 228, 0.95),
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(217, 198, 245, 0.9),
+            transparent 55%
+          ),
+          linear-gradient(160deg, #fff3f8, #f3e9ff);
 
-  transition:opacity 0.8s ease,visibility 0.8s ease;
-}
+        transition:
+          opacity 0.8s ease,
+          visibility 0.8s ease;
+      }
 
-#gate.hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
+      #gate.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
 
-.gate-card{
-  width:min(420px,92vw);
-  padding:44px 32px 36px;
-  text-align:center;
+      .gate-card {
+        width: min(420px, 92vw);
+        padding: 44px 32px 36px;
+        text-align: center;
 
-  background:var(--glass);
-  border:1px solid var(--glass-brd);
-  border-radius:28px;
+        background: var(--glass);
+        border: 1px solid var(--glass-brd);
+        border-radius: 28px;
 
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
 
-  box-shadow:var(--shadow-soft);
-  position:relative;
+        box-shadow: var(--shadow-soft);
+        position: relative;
 
-  animation:gateIn 1s cubic-bezier(.2,.9,.25,1);
-}
+        animation: gateIn 1s cubic-bezier(0.2, 0.9, 0.25, 1);
+      }
 
-@keyframes gateIn{
+      @keyframes gateIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px) scale(0.94) rotate(-1deg);
+        }
 
-  from{
-    opacity:0;
-    transform:translateY(40px) scale(0.94) rotate(-1deg);
-  }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(0deg);
+        }
+      }
 
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1) rotate(0deg);
-  }
+      .gate-icon {
+        font-size: 44px;
+        display: block;
+        margin-bottom: 6px;
+        animation: sway 3.5s ease-in-out infinite;
+      }
 
-}
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(-6deg);
+        }
 
-.gate-icon{
-  font-size:44px;
-  display:block;
-  margin-bottom:6px;
-  animation:sway 3.5s ease-in-out infinite;
-}
+        50% {
+          transform: rotate(6deg);
+        }
+      }
 
-@keyframes sway{
+      .gate-card h1 {
+        font-size: clamp(22px, 5vw, 28px);
+        margin: 6px 0 4px;
+        color: var(--rose-deep);
+      }
 
-  0%,100%{
-    transform:rotate(-6deg);
-  }
+      .gate-card p {
+        margin: 0 0 22px;
+        font-size: 14.5px;
+        opacity: 0.8;
+      }
 
-  50%{
-    transform:rotate(6deg);
-  }
+      .gate-input {
+        width: 100%;
+        padding: 14px 16px;
 
-}
+        border-radius: 16px;
+        border: 1.5px solid rgba(194, 68, 122, 0.25);
 
-.gate-card h1{
-  font-size:clamp(22px,5vw,28px);
-  margin:6px 0 4px;
-  color:var(--rose-deep);
-}
+        background: rgba(255, 255, 255, 0.6);
 
-.gate-card p{
-  margin:0 0 22px;
-  font-size:14.5px;
-  opacity:0.8;
-}
+        font-family: "Quicksand", sans-serif;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: var(--ink);
 
-.gate-input{
-  width:100%;
-  padding:14px 16px;
+        outline: none;
 
-  border-radius:16px;
-  border:1.5px solid rgba(194,68,122,0.25);
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
 
-  background:rgba(255,255,255,0.6);
+      .gate-input:focus {
+        border-color: var(--rose);
+        box-shadow: 0 0 0 4px rgba(194, 68, 122, 0.15);
+      }
 
-  font-family:'Quicksand',sans-serif;
-  font-size:16px;
-  text-align:center;
-  letter-spacing:1px;
-  color:var(--ink);
+      .gate-hint {
+        font-size: 12.5px;
+        margin-top: 10px;
+        opacity: 0.55;
+      }
 
-  outline:none;
+      .gate-btn {
+        margin-top: 18px;
+        width: 100%;
+        padding: 14px;
 
-  transition:border-color .3s,box-shadow .3s;
-}
+        border: none;
+        border-radius: 16px;
 
-.gate-input:focus{
-  border-color:var(--rose);
-  box-shadow:0 0 0 4px rgba(194,68,122,0.15);
-}
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        font-size: 15.5px;
 
-.gate-hint{
-  font-size:12.5px;
-  margin-top:10px;
-  opacity:0.55;
-}
+        color: #fff;
+        letter-spacing: 0.3px;
 
-.gate-btn{
-  margin-top:18px;
-  width:100%;
-  padding:14px;
+        cursor: pointer;
 
-  border:none;
-  border-radius:16px;
+        background: linear-gradient(120deg, var(--rose), var(--plum));
 
-  font-family:'Quicksand',sans-serif;
-  font-weight:700;
-  font-size:15.5px;
+        box-shadow: 0 12px 28px rgba(142, 42, 87, 0.35);
 
-  color:#fff;
-  letter-spacing:.3px;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
 
-  cursor:pointer;
+      .gate-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px rgba(142, 42, 87, 0.42);
+      }
 
-  background:linear-gradient(120deg,var(--rose),var(--plum));
+      .gate-btn:active {
+        transform: translateY(0);
+      }
 
-  box-shadow:0 12px 28px rgba(142,42,87,0.35);
+      .gate-error {
+        margin-top: 14px;
+        font-size: 13.5px;
+        color: var(--rose-deep);
+        min-height: 18px;
+        font-weight: 600;
+      }
 
-  transition:transform .25s ease,box-shadow .25s ease;
-}
+      .shake {
+        animation: shake 0.45s;
+      }
 
-.gate-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 34px rgba(142,42,87,0.42);
-}
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translateX(-2px);
+        }
 
-.gate-btn:active{
-  transform:translateY(0);
-}
+        20%,
+        80% {
+          transform: translateX(4px);
+        }
 
-.gate-error{
-  margin-top:14px;
-  font-size:13.5px;
-  color:var(--rose-deep);
-  min-height:18px;
-  font-weight:600;
-}
+        30%,
+        50%,
+        70% {
+          transform: translateX(-8px);
+        }
 
-.shake{
-  animation:shake .45s;
-}
+        40%,
+        60% {
+          transform: translateX(8px);
+        }
+      }
 
-@keyframes shake{
-
-  10%,90%{
-    transform:translateX(-2px);
-  }
-
-  20%,80%{
-    transform:translateX(4px);
-  }
-
-  30%,50%,70%{
-    transform:translateX(-8px);
-  }
-
-  40%,60%{
-    transform:translateX(8px);
-  }
-
-}
-
-
-/* ============================================================
+      /* ============================================================
    MAIN SITE
 ============================================================ */
 
-#site{
-  position:relative;
-  z-index:1;
+      #site {
+        position: relative;
+        z-index: 1;
 
-  opacity:0;
-  visibility:hidden;
+        opacity: 0;
+        visibility: hidden;
 
-  transition:opacity 1s ease;
-}
+        transition: opacity 1s ease;
+      }
 
-#site.visible{
-  opacity:1;
-  visibility:visible;
-}
+      #site.visible {
+        opacity: 1;
+        visibility: visible;
+      }
 
-.wrap{
-  max-width:920px;
-  margin:0 auto;
-  padding:0 20px;
-}
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-
-/* ============================================================
+      /* ============================================================
    HERO
 ============================================================ */
 
-.hero{
-  min-height:100svh;
+      .hero {
+        min-height: 100svh;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-  text-align:center;
+        text-align: center;
 
-  padding:60px 20px;
-  position:relative;
-}
+        padding: 60px 20px;
+        position: relative;
+      }
 
-.hero-tag{
-  font-size:13px;
-  letter-spacing:2px;
-  color:var(--rose-deep);
+      .hero-tag {
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: var(--rose-deep);
 
-  background:var(--glass);
-  border:1px solid var(--glass-brd);
+        background: var(--glass);
+        border: 1px solid var(--glass-brd);
 
-  padding:8px 18px;
-  border-radius:999px;
+        padding: 8px 18px;
+        border-radius: 999px;
 
-  backdrop-filter:blur(10px);
+        backdrop-filter: blur(10px);
 
-  margin-bottom:22px;
-}
+        margin-bottom: 22px;
+      }
 
-.hero h1{
-  font-size:clamp(38px,9vw,76px);
-  line-height:1.05;
-  margin:0;
+      .hero h1 {
+        font-size: clamp(38px, 9vw, 76px);
+        line-height: 1.05;
+        margin: 0;
 
-  background:linear-gradient(
-    120deg,
-    var(--rose-deep),
-    var(--rose),
-    var(--plum)
-  );
+        background: linear-gradient(
+          120deg,
+          var(--rose-deep),
+          var(--rose),
+          var(--plum)
+        );
 
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
 
-.hero h1 em{
-  font-style:italic;
-  color:var(--gold);
-  -webkit-text-fill-color:var(--gold);
-}
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+        -webkit-text-fill-color: var(--gold);
+      }
 
-.hero p.sub{
-  max-width:480px;
-  margin:20px auto 0;
-  font-size:16.5px;
-  opacity:0.75;
-  line-height:1.7;
-}
+      .hero p.sub {
+        max-width: 480px;
+        margin: 20px auto 0;
+        font-size: 16.5px;
+        opacity: 0.75;
+        line-height: 1.7;
+      }
 
-.hero-scroll{
-  margin-top:56px;
-  font-size:13px;
-  opacity:0.6;
+      .hero-scroll {
+        margin-top: 56px;
+        font-size: 13px;
+        opacity: 0.6;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
 
-.hero-scroll .arrow{
-  width:10px;
-  height:10px;
+      .hero-scroll .arrow {
+        width: 10px;
+        height: 10px;
 
-  border-right:2px solid var(--rose-deep);
-  border-bottom:2px solid var(--rose-deep);
+        border-right: 2px solid var(--rose-deep);
+        border-bottom: 2px solid var(--rose-deep);
 
-  transform:rotate(45deg);
+        transform: rotate(45deg);
 
-  animation:bounceDown 1.6s infinite;
-}
+        animation: bounceDown 1.6s infinite;
+      }
 
-@keyframes bounceDown{
+      @keyframes bounceDown {
+        0%,
+        100% {
+          transform: translateY(0) rotate(45deg);
+        }
 
-  0%,100%{
-    transform:translateY(0) rotate(45deg);
-  }
+        50% {
+          transform: translateY(8px) rotate(45deg);
+        }
+      }
 
-  50%{
-    transform:translateY(8px) rotate(45deg);
-  }
+      .floating-heart {
+        position: absolute;
+        font-size: 26px;
+        opacity: 0.55;
+        animation: driftHeart 6s ease-in-out infinite;
+      }
 
-}
+      @keyframes driftHeart {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
 
-.floating-heart{
-  position:absolute;
-  font-size:26px;
-  opacity:0.55;
-  animation:driftHeart 6s ease-in-out infinite;
-}
+        50% {
+          transform: translateY(-18px) rotate(8deg);
+        }
+      }
 
-@keyframes driftHeart{
-
-  0%,100%{
-    transform:translateY(0) rotate(0deg);
-  }
-
-  50%{
-    transform:translateY(-18px) rotate(8deg);
-  }
-
-}
-
-
-/* ============================================================
+      /* ============================================================
    SECTION HEADINGS
 ============================================================ */
 
-.section-intro{
-  text-align:center;
-  margin:90px 0 46px;
-}
+      .section-intro {
+        text-align: center;
+        margin: 90px 0 46px;
+      }
 
-.section-intro h2{
-  font-size:clamp(26px,5vw,38px);
-  margin:0 0 10px;
-  color:var(--rose-deep);
-}
+      .section-intro h2 {
+        font-size: clamp(26px, 5vw, 38px);
+        margin: 0 0 10px;
+        color: var(--rose-deep);
+      }
 
-.section-intro p{
-  margin:0 auto;
-  opacity:0.7;
-  font-size:15px;
-  max-width:520px;
-}
+      .section-intro p {
+        margin: 0 auto;
+        opacity: 0.7;
+        font-size: 15px;
+        max-width: 520px;
+      }
 
-
-/* ============================================================
+      /* ============================================================
    MEMORY CARDS
 ============================================================ */
 
-.cards-stack{
-  display:flex;
-  flex-direction:column;
-  gap:34px;
-  padding-bottom:60px;
-}
+      .cards-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+        padding-bottom: 60px;
+      }
 
-.memory-card{
+      .memory-card {
+        position: relative;
 
-  position:relative;
+        border-radius: 28px;
+        overflow: hidden;
 
-  border-radius:28px;
-  overflow:hidden;
+        background: var(--glass);
+        border: 1px solid var(--glass-brd);
 
-  background:var(--glass);
-  border:1px solid var(--glass-brd);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
 
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+        box-shadow: var(--shadow-soft);
 
-  box-shadow:var(--shadow-soft);
+        transform-style: preserve-3d;
+        perspective: 1200px;
 
-  transform-style:preserve-3d;
-  perspective:1200px;
+        opacity: 0;
+        transform: translateY(50px);
 
-  opacity:0;
-  transform:translateY(50px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
 
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
+        overflow-anchor: none;
+      }
 
-  overflow-anchor:none;
-}
+      .memory-card.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-.memory-card.in-view{
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-/* ============================================================
+      /* ============================================================
    CARD FACE
 ============================================================ */
 
-.card-face{
+      .card-face {
+        padding: 34px 26px;
 
-  padding:34px 26px;
+        cursor: pointer;
 
-  cursor:pointer;
+        display: flex;
+        align-items: center;
+        gap: 20px;
 
-  display:flex;
-  align-items:center;
-  gap:20px;
+        position: relative;
 
-  position:relative;
+        transition: transform 0.5s ease;
 
-  transition:transform .5s ease;
+        overflow-anchor: none;
+      }
 
-  overflow-anchor:none;
-}
+      .card-face:hover {
+        transform: scale(1.015);
+      }
 
-.card-face:hover{
-  transform:scale(1.015);
-}
+      .card-face .card-num {
+        font-family: "Playfair Display", serif;
+        font-size: 34px;
+        color: var(--blush-deep);
+        opacity: 0.7;
+        min-width: 52px;
+      }
 
-.card-face .card-num{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
-  color:var(--blush-deep);
-  opacity:0.7;
-  min-width:52px;
-}
+      .card-face .card-text h3 {
+        margin: 0 0 4px;
+        font-size: clamp(19px, 4vw, 24px);
+        color: var(--rose-deep);
+      }
 
-.card-face .card-text h3{
-  margin:0 0 4px;
-  font-size:clamp(19px,4vw,24px);
-  color:var(--rose-deep);
-}
+      .card-face .card-text p {
+        margin: 0;
+        font-size: 13.5px;
+        opacity: 0.65;
+      }
 
-.card-face .card-text p{
-  margin:0;
-  font-size:13.5px;
-  opacity:0.65;
-}
+      .card-face .card-cta {
+        margin-left: auto;
 
-.card-face .card-cta{
+        font-size: 13px;
+        font-weight: 700;
 
-  margin-left:auto;
+        color: #fff;
 
-  font-size:13px;
-  font-weight:700;
+        background: linear-gradient(120deg, var(--rose), var(--plum));
 
-  color:#fff;
+        padding: 10px 18px;
+        border-radius: 999px;
 
-  background:linear-gradient(
-    120deg,
-    var(--rose),
-    var(--plum)
-  );
+        white-space: nowrap;
 
-  padding:10px 18px;
-  border-radius:999px;
+        box-shadow: 0 10px 24px rgba(142, 42, 87, 0.3);
+      }
 
-  white-space:nowrap;
+      .memory-card.special .card-face .card-cta {
+        background: linear-gradient(120deg, var(--gold), #c9862a);
 
-  box-shadow:0 10px 24px rgba(142,42,87,0.3);
-}
+        box-shadow: 0 10px 24px rgba(199, 140, 20, 0.35);
+      }
 
-.memory-card.special .card-face .card-cta{
+      .memory-card.special {
+        border: 1.5px solid rgba(231, 185, 59, 0.55);
+      }
 
-  background:linear-gradient(
-    120deg,
-    var(--gold),
-    #c9862a
-  );
+      .memory-card.special .card-face .card-num {
+        color: var(--gold);
+      }
 
-  box-shadow:0 10px 24px rgba(199,140,20,0.35);
-}
+      .memory-card.special .card-face .card-text h3 {
+        color: #a8781a;
+      }
 
-.memory-card.special{
-  border:1.5px solid rgba(231,185,59,0.55);
-}
+      .bubble-deco {
+        position: absolute;
+        right: -10px;
+        top: -10px;
 
-.memory-card.special .card-face .card-num{
-  color:var(--gold);
-}
+        width: 70px;
+        height: 70px;
 
-.memory-card.special .card-face .card-text h3{
-  color:#a8781a;
-}
+        border-radius: 50%;
 
-.bubble-deco{
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 214, 228, 0.15)
+        );
 
-  position:absolute;
-  right:-10px;
-  top:-10px;
+        filter: blur(1px);
+      }
 
-  width:70px;
-  height:70px;
+      /* ================================
+   MEMORY NOTES
+================================ */
 
-  border-radius:50%;
+.memory-note {
+  width: 100%;
+  min-height: 150px;
+  padding: 28px 24px;
+  margin: 12px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
 
   background:
-    radial-gradient(
-      circle at 30% 30%,
-      rgba(255,255,255,0.9),
-      rgba(255,214,228,0.15)
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 235, 245, 0.95)
     );
 
-  filter:blur(1px);
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 105, 160, 0.22);
+
+  box-shadow:
+    0 12px 35px rgba(255, 80, 150, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  position: relative;
+  overflow: hidden;
+
+  grid-column: 1 / -1;
+
+  transform: rotate(-1deg);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* الورقة التانية بشكل مختلف */
+.memory-note:nth-of-type(6n) {
+  transform: rotate(1deg);
+}
+
+.memory-note:hover {
+  transform: rotate(0deg) translateY(-4px);
+
+  box-shadow:
+    0 18px 45px rgba(255, 80, 150, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* لمعة خفيفة */
+.memory-note::before {
+  content: "";
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -100px;
+  right: -70px;
+
+  background: rgba(255, 120, 180, 0.12);
+
+  border-radius: 50%;
+
+  filter: blur(5px);
+}
+
+/* خط زخرفي */
+.memory-note::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70%;
+  height: 1px;
+
+  bottom: 22px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 100, 160, 0.2),
+    transparent
+  );
+}
+
+.memory-note span {
+  font-size: 28px;
+  line-height: 1;
+
+  margin-bottom: 12px;
+
+  color: #ff6fa7;
+
+  text-shadow:
+    0 4px 12px rgba(255, 80, 150, 0.2);
+
+  animation: noteHeart 2.5s ease-in-out infinite;
+}
+
+.memory-note p {
+  margin: 0;
+
+  max-width: 650px;
+
+  font-size: 18px;
+  line-height: 1.9;
+
+  color: #7b4b60;
+
+  font-weight: 500;
+}
+
+/* حركة بسيطة للقلب */
+@keyframes noteHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
 }
 
 
-/* ============================================================
+/* موبايل */
+@media (max-width: 600px) {
+  .memory-note {
+    min-height: 125px;
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .memory-note span {
+    font-size: 24px;
+  }
+
+  .memory-note p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+      /* ============================================================
    EXPANDED CONTENT
 ============================================================ */
 
-.card-content{
+      .card-content {
+        display: grid;
+        grid-template-rows: 0fr;
 
-  max-height:0;
-  overflow:hidden;
+        overflow: hidden;
 
-  transition:
-    max-height .75s cubic-bezier(.2,.9,.2,1);
+        transition: grid-template-rows 0.75s cubic-bezier(0.2, 0.9, 0.2, 1);
 
-  overflow-anchor:none;
-}
+        overflow-anchor: none;
+      }
 
-.memory-card.open .card-content{
-  max-height:10000px;
-}
+      .memory-card.open .card-content {
+        grid-template-rows: 1fr;
+      }
 
-.card-inner{
-  padding:6px 24px 34px;
-  overflow-anchor:none;
-}
+      .card-inner {
+        min-height: 0;
+        overflow: hidden;
+        padding: 6px 24px 34px;
+        overflow-anchor: none;
+      }
 
-.close-row{
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:6px;
-}
+      .close-row {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 6px;
+      }
 
-.close-btn{
+      .close-btn {
+        border: none;
 
-  border:none;
+        background: rgba(255, 255, 255, 0.6);
 
-  background:rgba(255,255,255,0.6);
+        width: 34px;
+        height: 34px;
 
-  width:34px;
-  height:34px;
+        border-radius: 50%;
 
-  border-radius:50%;
+        font-size: 16px;
+        cursor: pointer;
 
-  font-size:16px;
-  cursor:pointer;
+        color: var(--rose-deep);
 
-  color:var(--rose-deep);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
 
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
+      .memory-card.open .card-face {
+        transform: scale(0.985);
+        filter: saturate(1.1);
+      }
 
-.memory-card.open .card-face{
-  transform:scale(0.985);
-  filter:saturate(1.1);
-}
-
-
-/* ============================================================
+      /* ============================================================
    PHOTO GRID
 ============================================================ */
 
-.photo-grid{
+      .photo-grid {
+        display: grid;
 
-  display:grid;
+        grid-template-columns: 1fr;
 
-  grid-template-columns:1fr;
+        gap: 14px;
 
-  gap:14px;
+        margin-bottom: 22px;
 
-  margin-bottom:22px;
+        overflow-anchor: none;
+      }
 
-  overflow-anchor:none;
-}
+      .photo-item {
+        position: relative;
 
-.photo-item{
+        width: 100%;
 
-  position:relative;
+        border-radius: 16px;
+        overflow: hidden;
 
-  width:100%;
+        aspect-ratio: auto;
 
-  border-radius:16px;
-  overflow:hidden;
+        background: linear-gradient(
+          140deg,
+          rgba(255, 191, 218, 0.35),
+          rgba(217, 198, 245, 0.25)
+        );
 
-  aspect-ratio:auto;
+        box-shadow: 0 10px 24px rgba(142, 42, 87, 0.15);
 
-  background:
-    linear-gradient(
-      140deg,
-      rgba(255,191,218,0.35),
-      rgba(217,198,245,0.25)
-    );
+        opacity: 0;
 
-  box-shadow:0 10px 24px rgba(142,42,87,0.15);
+        transform: translateY(30px) scale(0.92) rotate(-2deg);
 
-  opacity:0;
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s cubic-bezier(0.22, 0.85, 0.32, 1);
 
-  transform:
-    translateY(30px)
-    scale(0.92)
-    rotate(-2deg);
+        overflow-anchor: none;
+      }
 
-  transition:
-    opacity .8s ease,
-    transform .8s cubic-bezier(.22,.85,.32,1);
+      .photo-item.revealed {
+        opacity: 1;
 
-  overflow-anchor:none;
-}
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
 
-.photo-item.revealed{
+      .photo-item img {
+        width: 100%;
+        height: auto;
 
-  opacity:1;
+        display: block;
 
-  transform:
-    translateY(0)
-    scale(1)
-    rotate(0deg);
-}
+        object-fit: contain;
 
-.photo-item img{
+        transition: transform 0.5s ease;
+      }
 
-  width:100%;
-  height:auto;
+      .photo-item video {
+        width: 100%;
+        height: auto;
 
-  display:block;
+        display: block;
 
-  object-fit:contain;
+        object-fit: contain;
+      }
 
-  transition:transform .5s ease;
-}
+      .photo-item:hover img,
+      .photo-item:hover video {
+        transform: scale(1.03);
+      }
 
-.photo-item video{
+      .photo-item .frame-shine {
+        position: absolute;
+        inset: 0;
 
-  width:100%;
-  height:auto;
+        border-radius: 16px;
 
-  display:block;
+        box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.6);
 
-  object-fit:contain;
-}
+        pointer-events: none;
+      }
 
-.photo-item:hover img,
-.photo-item:hover video{
-  transform:scale(1.03);
-}
+      .video-item {
+        grid-column: span 1;
+      }
 
-.photo-item .frame-shine{
-
-  position:absolute;
-  inset:0;
-
-  border-radius:16px;
-
-  box-shadow:
-    inset 0 0 0 1.5px rgba(255,255,255,0.6);
-
-  pointer-events:none;
-}
-
-.video-item{
-  grid-column:span 1;
-}
-
-
-/* ============================================================
+      /* ============================================================
    MEMORY MESSAGE
 ============================================================ */
 
-.memory-msg{
+      .memory-msg {
+        background: rgba(255, 255, 255, 0.5);
 
-  background:rgba(255,255,255,0.5);
+        border-radius: 18px;
 
-  border-radius:18px;
+        padding: 16px 20px;
 
-  padding:16px 20px;
+        font-size: 14.5px;
+        line-height: 1.75;
 
-  font-size:14.5px;
-  line-height:1.75;
+        margin: 0 0 12px;
 
-  margin:0 0 12px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
 
-  border:1px solid rgba(255,255,255,0.6);
-}
+      .memory-msg.arabic {
+        font-size: 15.5px;
+      }
 
-.memory-msg.arabic{
-  font-size:15.5px;
-}
-
-
-/* ============================================================
+      /* ============================================================
    NOW PLAYING
 ============================================================ */
 
-.now-playing{
+      .now-playing {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-  display:flex;
-  align-items:center;
-  gap:10px;
+        font-size: 12.5px;
 
-  font-size:12.5px;
+        opacity: 0.65;
 
-  opacity:0.65;
+        margin-top: 14px;
+      }
 
-  margin-top:14px;
-}
+      .now-playing .eq {
+        display: flex;
+        gap: 2px;
+        align-items: flex-end;
+        height: 14px;
+      }
 
-.now-playing .eq{
+      .now-playing .eq span {
+        width: 3px;
 
-  display:flex;
-  gap:2px;
-  align-items:flex-end;
-  height:14px;
-}
+        background: var(--rose);
 
-.now-playing .eq span{
+        border-radius: 2px;
 
-  width:3px;
+        animation: eq 1s infinite ease-in-out;
+      }
 
-  background:var(--rose);
+      .now-playing .eq span:nth-child(2) {
+        animation-delay: 0.15s;
+      }
 
-  border-radius:2px;
+      .now-playing .eq span:nth-child(3) {
+        animation-delay: 0.3s;
+      }
 
-  animation:eq 1s infinite ease-in-out;
-}
+      @keyframes eq {
+        0%,
+        100% {
+          height: 4px;
+        }
 
-.now-playing .eq span:nth-child(2){
-  animation-delay:.15s;
-}
+        50% {
+          height: 14px;
+        }
+      }
 
-.now-playing .eq span:nth-child(3){
-  animation-delay:.3s;
-}
-
-@keyframes eq{
-
-  0%,100%{
-    height:4px;
-  }
-
-  50%{
-    height:14px;
-  }
-
-}
-
-
-/* ============================================================
+      /* ============================================================
    SPECIAL CARD
 ============================================================ */
 
-.memory-card.special .photo-item{
-  box-shadow:0 10px 26px rgba(199,140,20,0.25);
-}
+      .memory-card.special .photo-item {
+        box-shadow: 0 10px 26px rgba(199, 140, 20, 0.25);
+      }
 
-.sparkle-layer{
+      .sparkle-layer {
+        position: absolute;
+        inset: 0;
 
-  position:absolute;
-  inset:0;
+        pointer-events: none;
 
-  pointer-events:none;
+        overflow: hidden;
+      }
 
-  overflow:hidden;
-}
+      .sparkle {
+        position: absolute;
 
-.sparkle{
+        width: 6px;
+        height: 6px;
 
-  position:absolute;
+        background: var(--gold);
 
-  width:6px;
-  height:6px;
+        border-radius: 50%;
 
-  background:var(--gold);
+        opacity: 0;
 
-  border-radius:50%;
+        animation: sparkle 2.2s infinite;
 
-  opacity:0;
+        box-shadow: 0 0 8px 2px rgba(231, 185, 59, 0.7);
+      }
 
-  animation:sparkle 2.2s infinite;
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
 
-  box-shadow:0 0 8px 2px rgba(231,185,59,0.7);
-}
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
-@keyframes sparkle{
-
-  0%,100%{
-    opacity:0;
-    transform:scale(0);
-  }
-
-  50%{
-    opacity:1;
-    transform:scale(1);
-  }
-
-}
-
-
-/* ============================================================
+      /* ============================================================
    FINALE
 ============================================================ */
 
-.finale{
+      .finale {
+        position: relative;
 
-  position:relative;
+        margin: 40px 0 0;
 
-  margin:40px 0 0;
+        padding: 70px 26px 90px;
 
-  padding:70px 26px 90px;
+        text-align: center;
 
-  text-align:center;
+        border-radius: 36px 36px 0 0;
 
-  border-radius:36px 36px 0 0;
+        background: linear-gradient(
+          165deg,
+          rgba(255, 214, 228, 0.55),
+          rgba(217, 198, 245, 0.55)
+        );
 
-  background:
-    linear-gradient(
-      165deg,
-      rgba(255,214,228,0.55),
-      rgba(217,198,245,0.55)
-    );
+        backdrop-filter: blur(10px);
 
-  backdrop-filter:blur(10px);
+        overflow: hidden;
+      }
 
-  overflow:hidden;
-}
+      .finale::before {
+        content: "";
 
-.finale::before{
+        position: absolute;
+        inset: 0;
 
-  content:"";
+        background: radial-gradient(
+          circle at 20% 10%,
+          rgba(255, 255, 255, 0.5),
+          transparent 40%
+        );
 
-  position:absolute;
-  inset:0;
+        pointer-events: none;
+      }
 
-  background:
-    radial-gradient(
-      circle at 20% 10%,
-      rgba(255,255,255,0.5),
-      transparent 40%
-    );
+      .finale-icon {
+        font-size: 40px;
+        display: block;
+        margin-bottom: 18px;
+      }
 
-  pointer-events:none;
-}
+      .finale h2 {
+        font-size: clamp(26px, 5vw, 36px);
 
-.finale-icon{
+        color: var(--rose-deep);
 
-  font-size:40px;
-  display:block;
-  margin-bottom:18px;
-}
+        margin: 0 0 22px;
+      }
 
-.finale h2{
+      .finale-msg {
+        max-width: 600px;
 
-  font-size:clamp(26px,5vw,36px);
+        margin: 0 auto 26px;
 
-  color:var(--rose-deep);
+        font-size: 15.5px;
+        line-height: 1.9;
 
-  margin:0 0 22px;
-}
+        opacity: 0.85;
+      }
 
-.finale-msg{
+      .finale-msg.arabic {
+        max-width: 600px;
 
-  max-width:600px;
+        font-size: 16.5px;
+      }
 
-  margin:0 auto 26px;
+      .appreciation-row {
+        display: flex;
 
-  font-size:15.5px;
-  line-height:1.9;
+        flex-wrap: wrap;
 
-  opacity:0.85;
-}
+        gap: 12px;
 
-.finale-msg.arabic{
+        justify-content: center;
 
-  max-width:600px;
+        margin: 30px auto 34px;
 
-  font-size:16.5px;
-}
+        max-width: 640px;
+      }
 
-.appreciation-row{
+      .pill {
+        background: rgba(255, 255, 255, 0.55);
 
-  display:flex;
+        border: 1px solid rgba(255, 255, 255, 0.7);
 
-  flex-wrap:wrap;
+        padding: 10px 18px;
 
-  gap:12px;
+        border-radius: 999px;
 
-  justify-content:center;
+        font-size: 13.5px;
 
-  margin:30px auto 34px;
+        font-weight: 600;
 
-  max-width:640px;
-}
+        color: var(--rose-deep);
 
-.pill{
+        box-shadow: 0 8px 18px rgba(142, 42, 87, 0.1);
+      }
 
-  background:rgba(255,255,255,0.55);
+      .prayer-box {
+        max-width: 560px;
 
-  border:1px solid rgba(255,255,255,0.7);
+        margin: 34px auto 0;
 
-  padding:10px 18px;
+        padding: 26px 24px;
 
-  border-radius:999px;
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.35)
+        );
 
-  font-size:13.5px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
 
-  font-weight:600;
+        border-radius: 24px;
 
-  color:var(--rose-deep);
+        box-shadow: 0 16px 40px rgba(142, 42, 87, 0.15);
+      }
 
-  box-shadow:0 8px 18px rgba(142,42,87,0.1);
-}
+      .prayer-box .arabic {
+        font-size: 17px;
 
-.prayer-box{
+        line-height: 2.1;
 
-  max-width:560px;
+        color: var(--plum);
+      }
 
-  margin:34px auto 0;
+      .prayer-box .stars {
+        font-size: 18px;
 
-  padding:26px 24px;
+        margin-bottom: 10px;
 
-  background:
-    linear-gradient(
-      160deg,
-      rgba(255,255,255,0.6),
-      rgba(255,255,255,0.35)
-    );
+        letter-spacing: 6px;
 
-  border:1px solid rgba(255,255,255,0.7);
+        opacity: 0.8;
+      }
 
-  border-radius:24px;
+      .signature {
+        margin-top: 44px;
 
-  box-shadow:0 16px 40px rgba(142,42,87,0.15);
-}
+        font-family: "Playfair Display", serif;
 
-.prayer-box .arabic{
+        font-style: italic;
 
-  font-size:17px;
+        font-size: 19px;
 
-  line-height:2.1;
+        color: var(--rose-deep);
 
-  color:var(--plum);
-}
+        opacity: 0.9;
+      }
 
-.prayer-box .stars{
+      footer {
+        text-align: center;
 
-  font-size:18px;
+        padding: 26px 16px 40px;
 
-  margin-bottom:10px;
+        font-size: 12px;
 
-  letter-spacing:6px;
+        opacity: 0.45;
+      }
 
-  opacity:0.8;
-}
-
-.signature{
-
-  margin-top:44px;
-
-  font-family:'Playfair Display',serif;
-
-  font-style:italic;
-
-  font-size:19px;
-
-  color:var(--rose-deep);
-
-  opacity:0.9;
-}
-
-footer{
-
-  text-align:center;
-
-  padding:26px 16px 40px;
-
-  font-size:12px;
-
-  opacity:0.45;
-}
-
-
-/* ============================================================
+      /* ============================================================
    MOBILE
 ============================================================ */
 
-@media(max-width:600px){
+      @media (max-width: 600px) {
+        .card-face {
+          padding: 26px 18px;
 
-  .card-face{
+          gap: 12px;
+        }
 
-    padding:26px 18px;
+        .card-face .card-num {
+          min-width: 38px;
 
-    gap:12px;
-  }
+          font-size: 27px;
+        }
 
-  .card-face .card-num{
+        .card-face .card-text h3 {
+          font-size: 18px;
+        }
 
-    min-width:38px;
+        .card-face .card-text p {
+          font-size: 12px;
+        }
 
-    font-size:27px;
-  }
+        .card-face .card-cta {
+          padding: 8px 12px;
 
-  .card-face .card-text h3{
+          font-size: 11px;
+        }
 
-    font-size:18px;
-  }
+        .card-inner {
+          padding: 6px 16px 28px;
+        }
 
-  .card-face .card-text p{
+        .photo-grid {
+          gap: 12px;
+        }
 
-    font-size:12px;
-  }
+        .photo-item {
+          border-radius: 14px;
+        }
 
-  .card-face .card-cta{
+        .photo-item .frame-shine {
+          border-radius: 14px;
+        }
+      }
+    </style>
+  </head>
 
-    padding:8px 12px;
+  <body>
+    <div class="bubble-field" id="bubbleField"></div>
 
-    font-size:11px;
-  }
-
-  .card-inner{
-
-    padding:6px 16px 28px;
-  }
-
-  .photo-grid{
-
-    gap:12px;
-  }
-
-  .photo-item{
-
-    border-radius:14px;
-  }
-
-  .photo-item .frame-shine{
-
-    border-radius:14px;
-  }
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="bubble-field" id="bubbleField"></div>
-
-<!-- ============================================================
+    <!-- ============================================================
      PASSWORD GATE
 ============================================================ -->
 
-<div id="gate">
+    <div id="gate">
+      <div class="gate-card">
+        <span class="gate-icon">🔐✨</span>
 
-  <div class="gate-card">
+        <h1>هاي يا روديي💞</h1>
 
-    <span class="gate-icon">🔐🌸</span>
+        <p>Write the Birthday of the most beautiful rodyy💕</p>
 
-    <h1>Hey, it's me...</h1>
+        <form id="gateForm" autocomplete="off">
+          <input
+            type="text"
+            id="gateInput"
+            class="gate-input"
+            placeholder="DD/M/YYYY"
+            inputmode="numeric"
+            maxlength="10"
+          />
 
-    <p>
-      Before you come in, prove it's really you 🕵️‍♀️<br>
-      (hint: it's a date you definitely remember)
-    </p>
+          <button type="submit" class="gate-btn">Enjoy🥰</button>
 
-    <form id="gateForm" autocomplete="off">
-
-      <input
-        type="text"
-        id="gateInput"
-        class="gate-input"
-        placeholder="DD/M/YYYY"
-        inputmode="numeric"
-        maxlength="10"
-      >
-
-      <div class="gate-hint">
-        Just type the numbers — the / appears automatically
+          <div class="gate-error" id="gateError"></div>
+        </form>
       </div>
+    </div>
 
-      <button type="submit" class="gate-btn">
-        Open the Book 📖
-      </button>
+    <div id="site">
+      <section class="hero">
+        <span class="floating-heart" style="top: 14%; left: 10%"> 🌸</span>
 
-      <div class="gate-error" id="gateError"></div>
+        <span
+          class="floating-heart"
+          style="top: 22%; right: 12%; animation-delay: 1s"
+        >
+          💫</span
+        >
 
-    </form>
+        <span
+          class="floating-heart"
+          style="bottom: 18%; left: 16%; animation-delay: 2s"
+        >
+          🎀</span
+        >
 
-  </div>
+        <span
+          class="floating-heart"
+          style="bottom: 26%; right: 10%; animation-delay: 1.6s"
+        >
+          ✨</span
+        >
 
-</div>
+        <div class="hero-tag">
+          it's a small gift for you , i hope you enjoy it 💕
+        </div>
 
-<!-- ============================================================
-     MAIN SITE
-============================================================ -->
+        <!-- <h1>رودينا <em> اتمنى يكون عيد ميلادك صح واتمنى تعجبك </em></h1> -->
 
-<div id="site">
+        <div class="hero-scroll">
+          <span class="arrow"></span>
+        </div>
+      </section>
 
-<!-- ============================================================
-     HERO
-============================================================ -->
+      <div class="wrap">
+        <div class="section-intro"></div>
 
-<section class="hero">
-
-<span
-class="floating-heart"
-style="top:14%;left:10%;"
-
-> 🌸</span>
-
-<span
-class="floating-heart"
-style="top:22%;right:12%;animation-delay:1s;"
-
-> 💫</span>
-
-<span
-class="floating-heart"
-style="bottom:18%;left:16%;animation-delay:2s;"
-
-> 🎀</span>
-
-<span
-class="floating-heart"
-style="bottom:26%;right:10%;animation-delay:1.6s;"
-
-> ✨</span>
-
-  <div class="hero-tag">
-    a book of us, made with love
-  </div>
-
-  <h1>
-    To Roddy, <em>my person</em>
-  </h1>
-
-  <p class="sub">
-    Not a birthday card. Not a romance novel. Just every ridiculous,
-    beautiful, chaotic memory we've built together — kept safe in one
-    place, for the friend who somehow became family.
-  </p>
-
-  <div class="hero-scroll">
-
-    scroll to open our memories
-
-    <span class="arrow"></span>
-
-  </div>
-
-</section>
-
-<div class="wrap">
-
-<div class="section-intro">
-
-  <h2>
-    Our Memory Cards 🎞️
-  </h2>
-
-  <p>
-    Tap a card to open it. Each one has its own song, its own photos,
-    and its own chapter of us. Take your time — there's no rush in a
-    friendship like ours.
-  </p>
-
-</div>
-
-<div class="cards-stack" id="cardsStack">
-
-<!-- ============================================================
+        <div class="cards-stack" id="cardsStack">
+          <!-- ============================================================
      CARD 1
      30 PHOTOS + VIDEO
      VIDEO FIRST
 ============================================================ -->
 
-<article class="memory-card" data-card>
+          <article class="memory-card" data-card>
+            <div class="card-face" data-open>
+              <div class="bubble-deco"></div>
 
-  <div class="card-face" data-open>
+              <span class="card-num">01</span>
 
-    <div class="bubble-deco"></div>
+              <div class="card-text">
+                <h3>say mashallah first</h3>
+              </div>
 
-    <span class="card-num">01</span>
+              <span class="card-cta"> Open </span>
+            </div>
 
-    <div class="card-text">
-
-      <h3>
-        البداية... يوم قابلتك 🌸
-      </h3>
-
-      <p>
-        How it all started — completely by accident,
-        completely on purpose.
-      </p>
-
-    </div>
-
-    <span class="card-cta">
-      Open
-    </span>
-
-  </div>
-
-  <div class="card-content">
-
-    <div class="card-inner">
-
-      <div class="close-row">
-
-        <button
+            <div class="card-content">
+              <div class="card-inner">
+                <div class="close-row">
+                  <!-- <button
           class="close-btn"
           data-close
           type="button"
         >
           ✕
-        </button>
+        </button> -->
+                </div>
 
-      </div>
+                <audio data-song loop preload="none">
+                  <source src="song1.mp3" type="audio/mpeg" />
+                </audio>
 
+                <div class="photo-grid" data-grid>
+                  <!-- VIDEO FIRST -->
 
-      <audio data-song loop preload="none">
-        <source src="song1.mp3" type="audio/mpeg">
-      </audio>
+                  <div class="photo-item video-item">
+                    <video controls preload="none">
+                      <source src="video01.mp4" type="video/mp4" />
+                    </video>
 
+                    <div class="frame-shine"></div>
+                  </div>
 
-      <div class="photo-grid" data-grid>
+                  <!-- 30 PHOTOS -->
 
+                  <div class="photo-item">
+                    <img src="photo01.jpg" alt="Memory 1" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <!-- VIDEO FIRST -->
+                  <div class="photo-item">
+                    <img src="photo02.jpg" alt="Memory 2" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
+                  <div class="memory-note">
+  <span>♡</span>
+  <p>بجد ايه الجمال والحلاوه دي ربنا يحفظكك  </p>
+</div>
+                  <div class="photo-item">
+                    <img src="photo03.jpg" alt="Memory 3" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item video-item">
+                  <div class="photo-item">
+                    <img src="photo04.jpg" alt="Memory 4" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-          <video
-            controls
-            preload="none"
-          >
+                  <div class="photo-item">
+                    <img src="photo05.jpg" alt="Memory 5" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-            <source
-              src="video01.mp4"
-              type="video/mp4"
-            >
+                  <div class="photo-item">
+                    <img src="photo06.jpg" alt="Memory 6" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-          </video>
+                  <div class="photo-item">
+                    <img src="photo07.jpg" alt="Memory 7" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-          <div class="frame-shine"></div>
+                  <div class="photo-item">
+                    <img src="photo08.jpg" alt="Memory 8" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        </div>
+                  <div class="photo-item">
+                    <img src="photo41.jpg" alt="Memory 30" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
+                  <div class="photo-item">
+                    <img src="photo25.jpg" alt="Memory 25" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <!-- 30 PHOTOS -->
+                  <div class="photo-item">
+                    <img src="photo33.jpg" alt="Memory 11" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo01.jpg" alt="Memory 1" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo34.jpg" alt="Memory 12" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo02.jpg" alt="Memory 2" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo14.jpg" alt="Memory 14" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo03.jpg" alt="Memory 3" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo15.jpg" alt="Memory 15" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo04.jpg" alt="Memory 4" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo16.jpg" alt="Memory 16" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo05.jpg" alt="Memory 5" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  
+                                    <div class="memory-note">
+  <span>♡</span>
+  <p>اشطر واجمل دكتوره  </p>
+</div>
 
-        <div class="photo-item">
-          <img src="photo06.jpg" alt="Memory 6" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo17.jpg" alt="Memory 17" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo07.jpg" alt="Memory 7" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo18.jpg" alt="Memory 18" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo08.jpg" alt="Memory 8" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo38.jpg" alt="Memory 19" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo09.jpg" alt="Memory 9" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo20.jpg" alt="Memory 20" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo10.jpg" alt="Memory 10" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo43.jpg" alt="Memory 30" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo11.jpg" alt="Memory 11" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo22.jpg" alt="Memory 22" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo12.jpg" alt="Memory 12" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo23.jpg" alt="Memory 23" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo13.jpg" alt="Memory 13" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo28.jpg" alt="Memory 28" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo14.jpg" alt="Memory 14" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo26.jpg" alt="Memory 26" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo15.jpg" alt="Memory 15" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo27.jpg" alt="Memory 27" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo16.jpg" alt="Memory 16" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo29.jpg" alt="Memory 29" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo17.jpg" alt="Memory 17" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo39.jpg" alt="Memory 30" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo18.jpg" alt="Memory 18" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo42.jpg" alt="Memory 30" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <div class="photo-item">
-          <img src="photo19.jpg" alt="Memory 19" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
+                  <div class="photo-item">
+                    <img src="photo21.jpg" alt="Memory 21" loading="lazy" />
+                    <div class="frame-shine"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-        <div class="photo-item">
-          <img src="photo20.jpg" alt="Memory 20" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo21.jpg" alt="Memory 21" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo22.jpg" alt="Memory 22" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo23.jpg" alt="Memory 23" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo24.jpg" alt="Memory 24" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo25.jpg" alt="Memory 25" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo26.jpg" alt="Memory 26" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo27.jpg" alt="Memory 27" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo28.jpg" alt="Memory 28" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo29.jpg" alt="Memory 29" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-        <div class="photo-item">
-          <img src="photo30.jpg" alt="Memory 30" loading="lazy">
-          <div class="frame-shine"></div>
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</article>
-
-<!-- ============================================================
+          <!-- ============================================================
      CARD 2
      6 PHOTOS
 ============================================================ -->
 
-<article class="memory-card" data-card>
+          <article class="memory-card" data-card>
+            <div class="card-face" data-open>
+              <div class="bubble-deco"></div>
 
-  <div class="card-face" data-open>
+              <span class="card-num">02</span>
 
-    <div class="bubble-deco"></div>
+              <div class="card-text">
+                <h3>🥹</h3>
 
-    <span class="card-num">02</span>
 
-    <div class="card-text">
+              </div>
 
-      <h3>
-        جنان الجامعة والمذاكرة اللي مخلصتش 📚
-      </h3>
+              <span class="card-cta"> Open </span>
+            </div>
 
-      <p>
-        Deadlines, panic, coffee, and somehow still
-        laughing at 2am.
-      </p>
-
-    </div>
-
-    <span class="card-cta">
-      Open
-    </span>
-
-  </div>
-
-  <div class="card-content">
-
-    <div class="card-inner">
-
-      <div class="close-row">
-
-        <button
+            <div class="card-content">
+              <div class="card-inner">
+                <div class="close-row">
+                  <!-- <button
           class="close-btn"
           data-close
           type="button"
         >
           ✕
-        </button>
+        </button> -->
+                </div>
 
-      </div>
+                <audio data-song loop preload="none">
+                  <source src="song02.mp3" type="audio/mpeg" />
+                </audio>
 
+                <div class="photo-grid" data-grid>
+                  <div class="photo-item">
+                    <img src="photo11.jpg" alt="Memory 31" loading="lazy" />
 
-      <audio data-song loop preload="none">
+                    <div class="frame-shine"></div>
+                  </div>
 
-        <source
-          src="song02.mp3"
-          type="audio/mpeg"
-        >
+                  <div class="photo-item">
+                    <img src="photo12.jpg" alt="Memory 32" loading="lazy" />
 
-      </audio>
+                    <div class="frame-shine"></div>
+                  </div>
 
+                  <div class="photo-item">
+                    <img src="photo13.jpg" alt="Memory 33" loading="lazy" />
 
-      <div class="photo-grid" data-grid>
+                    <div class="frame-shine"></div>
+                  </div>
 
+                  <div class="photo-item">
+                    <img src="photo32.jpg" alt="Memory 34" loading="lazy" />
 
-        <div class="photo-item">
+                    <div class="frame-shine"></div>
+                  </div>
 
-          <img
-            src="photo31.jpg"
-            alt="Memory 31"
-            loading="lazy"
-          >
+                  <div class="photo-item">
+                    <img src="photo10.jpg" alt="Memory 35" loading="lazy" />
 
-          <div class="frame-shine"></div>
+                    <div class="frame-shine"></div>
+                  </div>
+                </div>
 
-        </div>
+              </div>
+            </div>
+          </article>
 
-
-        <div class="photo-item">
-
-          <img
-            src="photo32.jpg"
-            alt="Memory 32"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo33.jpg"
-            alt="Memory 33"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo34.jpg"
-            alt="Memory 34"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo35.jpg"
-            alt="Memory 35"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo36.jpg"
-            alt="Memory 36"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-      </div>
-
-
-      <p class="memory-msg">
-
-        Deadlines, panic, coffee, and somehow still
-        laughing at 2am. Somehow we survived all of it.
-
-      </p>
-
-
-    </div>
-
-  </div>
-
-</article>
-
-<!-- ============================================================
+          <!-- ============================================================
      CARD 3
      7 PHOTOS + VIDEO
      VIDEO FIRST
 ============================================================ -->
 
-<article class="memory-card special" data-card>
+          <article class="memory-card special" data-card>
+            <div class="card-face" data-open>
+              <div class="bubble-deco"></div>
 
-  <div class="card-face" data-open>
+              <span class="card-num">03</span>
 
-    <div class="bubble-deco"></div>
+              <div class="card-text">
+                <h3>your best friend</h3>
+              </div>
 
-    <span class="card-num">03</span>
+              <span class="card-cta"> Open ✨ </span>
+            </div>
 
-    <div class="card-text">
+            <div class="card-content">
+              <div class="card-inner" style="position: relative">
+                <div class="sparkle-layer" id="sparkleLayer"></div>
 
-      <h3>
-        أفضل صديقة في الدنيا 💗👑
-      </h3>
-
-      <p>
-        The chapter that doesn't really have an ending.
-      </p>
-
-    </div>
-
-    <span class="card-cta">
-      Open ✨
-    </span>
-
-  </div>
-
-  <div class="card-content">
-
-    <div
-      class="card-inner"
-      style="position:relative;"
-    >
-
-      <div
-        class="sparkle-layer"
-        id="sparkleLayer"
-      ></div>
-
-
-      <div class="close-row">
-
-        <button
+                <div class="close-row">
+                  <!-- <button
           class="close-btn"
           data-close
           type="button"
         >
           ✕
-        </button>
-
-      </div>
-
-
-      <audio data-song loop preload="none">
-
-        <source
-          src="song03.mp3"
-          type="audio/mpeg"
-        >
-
-      </audio>
-
-
-      <div class="photo-grid" data-grid>
-
-
-        <!-- VIDEO FIRST -->
-
-        <div class="photo-item video-item">
-
-          <video
-            controls
-            preload="none"
-          >
-
-            <source
-              src="video03.mp4"
-              type="video/mp4"
-            >
-
-          </video>
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <!-- 7 PHOTOS -->
-
-        <div class="photo-item">
-
-          <img
-            src="photo37.jpg"
-            alt="Memory 37"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo38.jpg"
-            alt="Memory 38"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo39.jpg"
-            alt="Memory 39"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo40.jpg"
-            alt="Memory 40"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo41.jpg"
-            alt="Memory 41"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo42.jpg"
-            alt="Memory 42"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-        <div class="photo-item">
-
-          <img
-            src="photo43.jpg"
-            alt="Memory 43"
-            loading="lazy"
-          >
-
-          <div class="frame-shine"></div>
-
-        </div>
-
-
-      </div>
-
-
-      <p class="memory-msg">
-
-        There's a version of my life story where nothing
-        makes sense without you in it. You're the friend
-        who shows up without being asked, who tells me the
-        truth even when it's not easy, and who somehow still
-        finds me funny after all these years.
-
-        Best friend doesn't even feel like a big enough
-        title for what you are to me.
-
-      </p>
-
-
-      <div class="now-playing">
-
-        <div class="eq">
-
-          <span></span>
-          <span></span>
-          <span></span>
-
-        </div>
-
-        <span data-now-playing-label>
-          song03.mp3 — the song that is basically "us"
-        </span>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</article>
-
+        </button> -->
+                </div>
+
+                <audio data-song loop preload="none">
+                  <source src="song03.mp3" type="audio/mpeg" />
+                </audio>
+
+                <div class="photo-grid" data-grid>
+                                                      <div class="memory-note">
+  <span>♡</span>
+  <p>Rubaaa🤍 </p>
 </div>
 
+                  <!-- VIDEO FIRST -->
+
+                  <div class="photo-item video-item">
+                    <video controls preload="none">
+                      <source src="video03.mp4" type="video/mp4" />
+                    </video>
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <!-- 7 PHOTOS -->
+
+                  <div class="photo-item">
+                    <img src="photo19.jpg" alt="Memory 37" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <div class="photo-item">
+                    <img src="photo30.jpg" alt="Memory 38" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <div class="photo-item">
+                    <img src="photo37.jpg" alt="Memory 39" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <div class="photo-item">
+                    <img src="photo40.jpg" alt="Memory 40" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <div class="photo-item">
+                    <img src="photo44.jpg" alt="Memory 41" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <div class="photo-item">
+                    <img src="photo36.jpg" alt="Memory 42" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+
+                  <div class="photo-item">
+                    <img src="photo35.jpg" alt="Memory 43" loading="lazy" />
+
+                    <div class="frame-shine"></div>
+                  </div>
+                </div>
+
+                                                      <div class="memory-note">
+  <span>♡</span>
+  <p>ربنا يخليكم لبعض ويديم صداقتكم ودايما تبقو مبسوطين🥹💞 </p>
 </div>
 
-<!-- ============================================================
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ============================================================
      FINALE
 ============================================================ -->
 
-<section class="finale">
+      <section class="finale">
+        <span class="finale-icon"> 🌷 </span>
 
-  <span class="finale-icon">
-    🌷
-  </span>
+        <h2>Before you close </h2>
 
-  <h2>
-    Before you close this book...
-  </h2>
+<div class="memory-note">
+  <span>♡</span>
+يارب تكوني اتبسطتي وتكون عجبتك ودي حاجه بسيطه جدا<br> احنا منعرفش بعض من زمان اه بس انتي شخصيه جميله اوي وتدخلي القلب بسرعه جدا كفايه ان روحك حلوه وشخصيتك تحفه<br> يارب دايما تبقي مسبوطه وتحققي كل اللي نفسك وتبقي اشطر واجمل دكتوره  
+انتي كده كده ماشاءالله عليكي بجد جميله جدا وملامحك حلوه ورقيقه وزي القمر <i>you are so perfect</i> <br>  انا مبسوط جدا اني اتعرفت عليكي وعلى رأي البيو  رب صدفه خير من الف ميعاد  <br> شكرا انك وصلتي لحد هنا ويارب تكوني اتبسطتي يا روديي 
+        </div>
 
-  <p class="finale-msg">
 
-    Roddy, thank you for every memory, every laugh,
-    every late-night call that turned into a two-hour
-    conversation about nothing and everything.
 
-    Thank you for being the kind of friend people spend
-    a lifetime hoping to find.
 
-    This isn't a goodbye — it's just a page-break.
-    There's so much more of "us" still to write.
 
-  </p>
-
-  <div class="appreciation-row">
-
-    <span class="pill">
-      Thank you for staying 💗
-    </span>
-
-    <span class="pill">
-      Thank you for the laughs 😂
-    </span>
-
-    <span class="pill">
-      Thank you for believing in me 🌟
-    </span>
-
-    <span class="pill">
-      Thank you for just... being you 🌸
-    </span>
-
-  </div>
-
-  <div class="prayer-box">
-
-    <div class="stars">
-      ✦ ✦ ✦
+      <footer>
+        made with 💗 for u 
+      </footer>
     </div>
 
-    <p class="arabic">
+   <script>
+  /* ============================================================
+     1) AMBIENT BUBBLES
+  ============================================================ */
 
-      يا رب يكون طريقك مفروش بالنجاح والسعادة يا دكتورة رودينا 🩺💫
-      يا رب توصلي لكل حلم بتحلمي بيه، ويكون بجد كل تعب ودموع المذاكرة
-      سبب فخرك يوم ما تلبسي الروب الأبيض ده.
+  (function createBubbles() {
+    const field = document.getElementById("bubbleField");
+    if (!field) return;
 
-      يا رب حد ما يضحك عليكي غير أنا،
-      وحد ما يفرح بيكي غير اللي بيحبك بجد.
+    const count = window.innerWidth < 640 ? 12 : 20;
 
-      وربنا يخليكي ليا،
-      ويخلي صحبتنا دي لحد الجنة يا رب 🤍
+    for (let i = 0; i < count; i++) {
+      const b = document.createElement("div");
 
-    </p>
+      b.className = "bubble";
 
-  </div>
+      const size = 14 + Math.random() * 46;
 
-  <p
-    class="finale-msg"
-    style="margin-top:30px;"
-  >
+      b.style.width = size + "px";
+      b.style.height = size + "px";
+      b.style.left = Math.random() * 100 + "vw";
+      b.style.animationDuration = 10 + Math.random() * 14 + "s";
+      b.style.animationDelay = Math.random() * 12 + "s";
 
-    You're going to be an incredible doctor —
-    not because you're the smartest person I know
-    (although, fine, you are), but because you actually care.
-
-    The world needs more people like you holding it together,
-    and I already know your patients are going to be lucky
-    to have you.
-
-    I already am.
-
-  </p>
-
-  <div class="signature">
-
-    — always your person, no matter what chapter we're on
-
-  </div>
-
-</section>
-
-<footer>
-
-made with 💗 for Roddy ·
-a private little corner of the internet, just for us
-
-</footer>
-
-</div>
-
-<script>
+      field.appendChild(b);
+    }
+  })();
 
 
-/* ============================================================
-   1) AMBIENT BUBBLES
-============================================================ */
+  /* ============================================================
+     2) PASSWORD GATE
+  ============================================================ */
 
-(function createBubbles(){
+  (function passwordGate() {
+    const gate = document.getElementById("gate");
+    const form = document.getElementById("gateForm");
+    const input = document.getElementById("gateInput");
+    const error = document.getElementById("gateError");
+    const site = document.getElementById("site");
 
-  const field =
-    document.getElementById('bubbleField');
+    if (!gate || !form || !input || !site) return;
 
-  const count =
-    window.innerWidth < 640 ? 12 : 20;
+    const validAnswers = ["16052005", "1652005"];
 
-  for(let i=0;i<count;i++){
-
-    const b =
-      document.createElement('div');
-
-    b.className='bubble';
-
-    const size =
-      14 + Math.random()*46;
-
-    b.style.width=size+'px';
-
-    b.style.height=size+'px';
-
-    b.style.left=
-      Math.random()*100+'vw';
-
-    b.style.animationDuration=
-      (10+Math.random()*14)+'s';
-
-    b.style.animationDelay=
-      (Math.random()*12)+'s';
-
-    field.appendChild(b);
-
-  }
-
-})();
-
-
-/* ============================================================
-   2) PASSWORD GATE
-============================================================ */
-
-(function passwordGate(){
-
-  const gate =
-    document.getElementById('gate');
-
-  const form =
-    document.getElementById('gateForm');
-
-  const input =
-    document.getElementById('gateInput');
-
-  const error =
-    document.getElementById('gateError');
-
-  const site =
-    document.getElementById('site');
-
-
-  const validAnswers=[
-    '16052005',
-    '1652005'
-  ];
-
-
-  function normalize(str){
-
-    return str.replace(/[^0-9]/g,'');
-
-  }
-
-
-  input.addEventListener('input',function(){
-
-    let digits =
-      normalize(input.value);
-
-
-    if(
-      digits.length>=3 &&
-      digits[2]==='0'
-    ){
-
-      digits =
-        digits.slice(0,2)+
-        digits.slice(3);
-
+    function normalize(str) {
+      return str.replace(/[^0-9]/g, "");
     }
 
+    input.addEventListener("input", function () {
+      let digits = normalize(input.value);
 
-    digits =
-      digits.slice(0,7);
+      if (digits.length >= 3 && digits[2] === "0") {
+        digits = digits.slice(0, 2) + digits.slice(3);
+      }
 
+      digits = digits.slice(0, 7);
 
-    let formatted=digits;
+      let formatted = digits;
 
+      if (digits.length > 3) {
+        formatted =
+          digits.slice(0, 2) +
+          "/" +
+          digits.slice(2, 3) +
+          "/" +
+          digits.slice(3);
+      } else if (digits.length > 2) {
+        formatted =
+          digits.slice(0, 2) +
+          "/" +
+          digits.slice(2);
+      }
 
-    if(digits.length>3){
+      input.value = formatted;
+    });
 
-      formatted =
-        digits.slice(0,2)+
-        '/' +
-        digits.slice(2,3)+
-        '/' +
-        digits.slice(3);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    }
+      const digits = normalize(input.value);
 
-    else if(digits.length>2){
+      if (validAnswers.includes(digits)) {
+        gate.classList.add("hidden");
+        site.classList.add("visible");
 
-      formatted =
-        digits.slice(0,2)+
-        '/' +
-        digits.slice(2);
+        document.body.style.overflow = "auto";
+      } else {
+        error.textContent =
+          "That's not it... try again 🤔 (hint: her birthday)";
 
-    }
+        const card = document.querySelector(".gate-card");
 
+        if (card) {
+          card.classList.remove("shake");
 
-    input.value=formatted;
+          void card.offsetWidth;
 
-  });
-
-
-  form.addEventListener('submit',function(e){
-
-    e.preventDefault();
-
-
-    const digits =
-      normalize(input.value);
-
-
-    if(validAnswers.includes(digits)){
-
-      gate.classList.add('hidden');
-
-      site.classList.add('visible');
-
-      document.body.style.overflow='auto';
-
-    }
-
-    else{
-
-      error.textContent=
-        "That's not it... try again 🤔 (hint: her birthday)";
+          card.classList.add("shake");
+        }
+      }
+    });
+  })();
 
 
-      const card =
-        document.querySelector('.gate-card');
+  /* ============================================================
+     3) CARD SCROLL REVEAL
+  ============================================================ */
 
+  (function scrollReveal() {
+    const cards = document.querySelectorAll(".memory-card");
 
-      card.classList.remove('shake');
+    if (!cards.length) return;
 
-      void card.offsetWidth;
-
-      card.classList.add('shake');
-
-    }
-
-  });
-
-})();
-
-
-/* ============================================================
-   3) CARD SCROLL REVEAL
-============================================================ */
-
-(function scrollReveal(){
-
-  const cards =
-    document.querySelectorAll('.memory-card');
-
-
-  const observer =
-    new IntersectionObserver(
-
-      (entries)=>{
-
-        entries.forEach(entry=>{
-
-          if(entry.isIntersecting){
-
-            entry.target.classList.add('in-view');
-
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
             observer.unobserve(entry.target);
-
           }
-
         });
-
       },
-
       {
-        threshold:0.15
+        threshold: 0.15,
       }
-
     );
 
-
-  cards.forEach(card=>{
-
-    observer.observe(card);
-
-  });
-
-})();
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+  })();
 
 
-/* ============================================================
-   4) MEMORY CARDS
-   (fixed: always opens at first photo/frame, never jumps
-   the page scroll, and fully resets whichever card was
-   previously open — audio AND video — regardless of which
-   card that was.)
-============================================================ */
+  /* ============================================================
+     4) MEMORY CARDS
+     
+     NEW BEHAVIOR:
+     - Open card:
+         * audio starts
+         * video starts automatically
+     - Opening another card:
+         * old audio stops
+         * old video stops
+         * old media resets
+         * new audio starts
+         * new video starts
+     - Closing card:
+         * audio stops
+         * video stops
+         * everything resets
+  ============================================================ */
 
-(function memoryCards(){
+  (function memoryCards() {
+    const allCards = document.querySelectorAll("[data-card]");
 
-  const allCards =
-    document.querySelectorAll('[data-card]');
+    if (!allCards.length) return;
 
 
-  /* ---------------------------------------------------------
-     MEDIA RESET
-     Pauses + rewinds a card's audio and every video inside it
-     back to frame/second zero. Previously only audio was ever
-     reset here, so a scrubbed video kept playing (or stayed
-     mid-scrub) after switching cards — that's fixed below.
-  --------------------------------------------------------- */
+    /* ------------------------------------------------------------
+       MEDIA RESET
+    ------------------------------------------------------------ */
 
-  function resetCardMedia(card,{play=false}={}){
+    function resetCardMedia(card, options = {}) {
+      const play = options.play === true;
 
-    const audio =
-      card.querySelector('[data-song]');
+      const audio = card.querySelector("[data-song]");
 
-    if(audio){
+      if (audio) {
+        audio.pause();
 
-      audio.pause();
+        try {
+          audio.currentTime = 0;
+        } catch (e) {}
 
-      audio.currentTime=0;
-
-      if(play){
-
-        audio.play().catch(()=>{});
-
+        if (play) {
+          audio.play().catch(() => {});
+        }
       }
 
+      card.querySelectorAll("video").forEach((video) => {
+        video.pause();
+
+        try {
+          video.currentTime = 0;
+        } catch (e) {}
+
+        /*
+          الفيديو لازم يكون muted علشان autoplay
+          يشتغل في Chrome / Edge / Safari.
+        */
+
+        video.muted = true;
+        video.setAttribute("muted", "");
+
+        if (play) {
+          video.play().catch(() => {});
+        }
+      });
     }
 
 
-    card.querySelectorAll('video').forEach(video=>{
+    /* ------------------------------------------------------------
+       PHOTO REVEAL
+    ------------------------------------------------------------ */
 
-      video.pause();
+    const photoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
 
-      video.currentTime=0;
-
-    });
-
-  }
-
-
-  /* ---------------------------------------------------------
-     PHOTO REVEAL
-  --------------------------------------------------------- */
-
-  const photoObserver =
-    new IntersectionObserver(
-
-      (entries)=>{
-
-        entries.forEach(entry=>{
-
-          if(entry.isIntersecting){
-
-            entry.target.classList.add('revealed');
-
-            photoObserver.unobserve(
-              entry.target
-            );
-
+            photoObserver.unobserve(entry.target);
           }
-
         });
-
       },
-
       {
-        threshold:0.05,
-        rootMargin:'0px 0px -20px 0px'
+        threshold: 0.05,
+        rootMargin: "0px 0px -20px 0px",
       }
-
     );
 
 
-  document
-    .querySelectorAll('.photo-item')
-    .forEach(photo=>{
-
+    document.querySelectorAll(".photo-item").forEach((photo) => {
       photoObserver.observe(photo);
-
     });
 
 
-  function resetCardPhotos(card){
-
-    card
-      .querySelectorAll('.photo-item')
-      .forEach(photo=>{
-
-        photo.classList.remove('revealed');
+    function resetCardPhotos(card) {
+      card.querySelectorAll(".photo-item").forEach((photo) => {
+        photo.classList.remove("revealed");
 
         photoObserver.observe(photo);
-
       });
+    }
 
-  }
 
+    /* ------------------------------------------------------------
+       SCROLL STABILITY
+    ------------------------------------------------------------ */
 
-  /* ---------------------------------------------------------
-     SCROLL-STABLE ACCORDION
+    const lastHeights = new WeakMap();
 
-     The old approach snapshotted window.scrollY once and
-     restored that same absolute pixel value two frames later.
-     That breaks the moment a PREVIOUSLY-open card sits above
-     the viewport: .card-content collapses over a .75s CSS
-     max-height transition, so its height keeps shrinking long
-     after the one-time restore already fired — the page then
-     visibly drifts/jumps once that tall card finishes
-     collapsing (this is what looked like "jumping to another
-     card" or "to the bottom").
-
-     Fix: continuously compensate scroll for the *entire*
-     transition using a ResizeObserver on every card's
-     .card-content. Whenever a card's rendered height changes
-     while it's positioned above the viewport, shift scroll by
-     the exact delta immediately. Cards at/below the viewport
-     are left alone so their own open/close animation still
-     plays normally.
-  --------------------------------------------------------- */
-
-  const lastHeights = new WeakMap();
-
-  if('ResizeObserver' in window){
-
-    const heightObserver =
-      new ResizeObserver(entries=>{
-
-        entries.forEach(entry=>{
-
+    if ("ResizeObserver" in window) {
+      const heightObserver = new ResizeObserver((entries) => {
+        entries.forEach((entry) => {
           const el = entry.target;
 
-          const newHeight =
-            entry.contentRect.height;
+          const newHeight = entry.contentRect.height;
+          const prevHeight = lastHeights.get(el);
 
-          const prevHeight =
-            lastHeights.get(el);
+          lastHeights.set(el, newHeight);
 
-          lastHeights.set(el,newHeight);
+          if (prevHeight === undefined) return;
 
-          if(prevHeight===undefined) return;
+          const delta = newHeight - prevHeight;
 
-          const delta =
-            newHeight - prevHeight;
+          if (!delta) return;
 
-          if(!delta) return;
+          /*
+            لو الكارت فوق الشاشة، حافظ على مكان المستخدم
+            أثناء فتح/قفل الكارت.
+          */
 
-          // Only compensate for cards above the viewport —
-          // a card resizing in/near view should visibly animate.
-          if(el.getBoundingClientRect().top < 0){
+          if (el.getBoundingClientRect().top < 0) {
+            window.scrollBy(0, delta);
+          }
+        });
+      });
 
-            window.scrollBy(0,delta);
+      allCards.forEach((card) => {
+        const content = card.querySelector(".card-content");
 
+        if (content) {
+          lastHeights.set(
+            content,
+            content.getBoundingClientRect().height
+          );
+
+          heightObserver.observe(content);
+        }
+      });
+    }
+
+
+    /* ------------------------------------------------------------
+       STOP ALL MEDIA
+    ------------------------------------------------------------ */
+
+    function stopAllOtherCards(currentCard) {
+      allCards.forEach((otherCard) => {
+        if (otherCard === currentCard) return;
+
+        otherCard.classList.remove("open");
+
+        const audio = otherCard.querySelector("[data-song]");
+
+        if (audio) {
+          audio.pause();
+
+          try {
+            audio.currentTime = 0;
+          } catch (e) {}
+        }
+
+        otherCard.querySelectorAll("video").forEach((video) => {
+          video.pause();
+
+          try {
+            video.currentTime = 0;
+          } catch (e) {}
+        });
+
+        resetCardPhotos(otherCard);
+      });
+    }
+
+
+    /* ------------------------------------------------------------
+       PLAY CARD MEDIA
+    ------------------------------------------------------------ */
+
+    function playCardMedia(card) {
+      /*
+        شغّل الأغنية
+      */
+
+      const audio = card.querySelector("[data-song]");
+
+      if (audio) {
+        audio.currentTime = 0;
+
+        audio.play().catch(() => {
+          /*
+            بعض المتصفحات تمنع autoplay للصوت.
+            الفيديو سيظل يعمل muted.
+          */
+        });
+      }
+
+
+      /*
+        شغّل كل الفيديوهات الموجودة في الكارت
+      */
+
+      const videos = card.querySelectorAll("video");
+
+      videos.forEach((video) => {
+        video.pause();
+
+        try {
+          video.currentTime = 0;
+        } catch (e) {}
+
+        /*
+          autoplay لازم muted
+        */
+
+        video.muted = true;
+        video.setAttribute("muted", "");
+
+        video.playsInline = true;
+        video.setAttribute("playsinline", "");
+
+        video.autoplay = true;
+        video.setAttribute("autoplay", "");
+
+        video.play().catch(() => {});
+      });
+    }
+
+
+    /* ------------------------------------------------------------
+       OPEN CARD
+    ------------------------------------------------------------ */
+
+    function openCard(card) {
+
+      /*
+        اقفل كل الكروت التانية
+        ووقف الفيديوهات والأغاني بتاعتها.
+      */
+
+      stopAllOtherCards(card);
+
+
+      /*
+        افتح الكارت الحالي
+      */
+
+      card.classList.add("open");
+
+
+      /*
+        رجّع الصور لأولها
+      */
+
+      resetCardPhotos(card);
+
+
+      /*
+        شغّل الأغنية والفيديو
+      */
+
+      setTimeout(() => {
+        playCardMedia(card);
+      }, 50);
+    }
+
+
+    /* ------------------------------------------------------------
+       CLOSE CARD
+    ------------------------------------------------------------ */
+
+    function closeCard(card) {
+
+      card.classList.remove("open");
+
+      resetCardMedia(card);
+
+      resetCardPhotos(card);
+    }
+
+
+    /* ------------------------------------------------------------
+       CLICK EVENTS
+    ------------------------------------------------------------ */
+
+    allCards.forEach((card) => {
+
+      const face = card.querySelector("[data-open]");
+      const closeBtn = card.querySelector("[data-close]");
+
+      if (face) {
+        face.addEventListener("click", function () {
+
+          if (card.classList.contains("open")) {
+            closeCard(card);
+          } else {
+            openCard(card);
           }
 
         });
-
-      });
-
-
-    allCards.forEach(card=>{
-
-      const content =
-        card.querySelector('.card-content');
-
-      if(content){
-
-        lastHeights.set(
-          content,
-          content.getBoundingClientRect().height
-        );
-
-        heightObserver.observe(content);
-
       }
 
-    });
 
-  }
-
-
-  /* ---------------------------------------------------------
-     OPEN CARD
-  --------------------------------------------------------- */
-
-  function openCard(card){
-
-    allCards.forEach(otherCard=>{
-
-      if(otherCard !== card){
-
-        otherCard.classList.remove('open');
-
-        resetCardMedia(otherCard);
-
-        resetCardPhotos(otherCard);
-
-      }
-
-    });
-
-
-    card.classList.add('open');
-
-
-    // Always resets photo reveal + rewinds audio/video to
-    // the start, so every open lands on the first image/frame
-    // no matter which card was open before this one.
-    resetCardPhotos(card);
-
-    resetCardMedia(card,{play:true});
-
-  }
-
-
-  /* ---------------------------------------------------------
-     CLOSE CARD
-  --------------------------------------------------------- */
-
-  function closeCard(card){
-
-    card.classList.remove('open');
-
-    resetCardMedia(card);
-
-    resetCardPhotos(card);
-
-  }
-
-
-  /* ---------------------------------------------------------
-     CLICK EVENTS
-  --------------------------------------------------------- */
-
-  allCards.forEach(card=>{
-
-    const face =
-      card.querySelector('[data-open]');
-
-    const closeBtn =
-      card.querySelector('[data-close]');
-
-
-    face.addEventListener(
-      'click',
-      function(){
-
-        if(card.classList.contains('open')){
-
-          closeCard(card);
-
-        }
-
-        else{
-
-          openCard(card);
-
-        }
-
-      }
-    );
-
-
-    if(closeBtn){
-
-      closeBtn.addEventListener(
-        'click',
-        function(e){
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function (e) {
 
           e.preventDefault();
-
           e.stopPropagation();
 
           closeCard(card);
 
-        }
-      );
-
-    }
-
-  });
-
-})();
+        });
+      }
+    });
 
 
-/* ============================================================
-   5) SPARKLES
-============================================================ */
+    /* ------------------------------------------------------------
+       VIDEO CONTROL
+       
+       لو المستخدم شغّل فيديو يدويًا:
+       - نوقف فيديوهات الكروت الأخرى
+       - لكن الأغنية الخاصة بنفس الكارت تفضل شغالة
+    ------------------------------------------------------------ */
 
-(function sparkles(){
+    allCards.forEach((card) => {
 
-  const layer =
-    document.getElementById('sparkleLayer');
+      card.querySelectorAll("video").forEach((video) => {
 
+        video.addEventListener("play", function () {
 
-  if(!layer)return;
+          allCards.forEach((otherCard) => {
 
+            if (otherCard === card) return;
 
-  for(let i=0;i<18;i++){
+            otherCard.querySelectorAll("video").forEach((otherVideo) => {
+              otherVideo.pause();
+            });
 
-    const s =
-      document.createElement('div');
+            const otherAudio =
+              otherCard.querySelector("[data-song]");
 
-    s.className='sparkle';
+            if (otherAudio) {
+              otherAudio.pause();
 
-    s.style.left=
-      Math.random()*100+'%';
-
-    s.style.top=
-      Math.random()*100+'%';
-
-    s.style.animationDelay=
-      Math.random()*2.2+'s';
-
-    layer.appendChild(s);
-
-  }
-
-})();
-
-
-/* ============================================================
-   6) STOP VIDEO/AUDIO FROM OTHER CARDS
-============================================================ */
-
-(function mediaControl(){
-
-  const cards =
-    document.querySelectorAll('[data-card]');
-
-
-  cards.forEach(card=>{
-
-    card.querySelectorAll('video').forEach(video=>{
-
-      video.addEventListener('play',function(){
-
-        cards.forEach(otherCard=>{
-
-          if(otherCard !== card){
-
-            otherCard
-              .querySelectorAll('video')
-              .forEach(otherVideo=>{
-
-                otherVideo.pause();
-
-              });
-
-
-            const audio =
-              otherCard.querySelector('[data-song]');
-
-            if(audio){
-
-              audio.pause();
-
+              try {
+                otherAudio.currentTime = 0;
+              } catch (e) {}
             }
 
-          }
+          });
 
         });
 
@@ -2649,11 +2276,188 @@ a private little corner of the internet, just for us
 
     });
 
-  });
 
-})();
+    /* ------------------------------------------------------------
+       WHEN AUDIO ENDS
+       LOOP موجود في HTML لذلك مش محتاجين نعمل حاجة.
+    ------------------------------------------------------------ */
+
+
+    /* ------------------------------------------------------------
+       WHEN VIDEO ENDS
+       
+       الفيديو مش هيعيد نفسه تلقائيًا.
+    ------------------------------------------------------------ */
+
+    allCards.forEach((card) => {
+
+      card.querySelectorAll("video").forEach((video) => {
+
+        video.addEventListener("ended", function () {
+
+          /*
+            الفيديو انتهى فقط.
+            الأغنية تفضل شغالة.
+          */
+
+          try {
+            video.currentTime = 0;
+          } catch (e) {}
+
+        });
+
+      });
+
+    });
+
+  })();
+
+
+  /* ============================================================
+     5) SPARKLES
+  ============================================================ */
+
+  (function sparkles() {
+
+    const layer = document.getElementById("sparkleLayer");
+
+    if (!layer) return;
+
+    for (let i = 0; i < 18; i++) {
+
+      const s = document.createElement("div");
+
+      s.className = "sparkle";
+
+      s.style.left = Math.random() * 100 + "%";
+      s.style.top = Math.random() * 100 + "%";
+
+      s.style.animationDelay =
+        Math.random() * 2.2 + "s";
+
+      layer.appendChild(s);
+    }
+
+  })();
+
+
+  /* ============================================================
+     6) GLOBAL MEDIA CONTROL
+     
+     ممنوع أكتر من كارت يشغل Media في نفس الوقت.
+  ============================================================ */
+
+  (function globalMediaControl() {
+
+    const cards = document.querySelectorAll("[data-card]");
+
+    cards.forEach((card) => {
+
+      /*
+        AUDIO
+      */
+
+      const audio = card.querySelector("[data-song]");
+
+      if (audio) {
+
+        audio.addEventListener("play", function () {
+
+          cards.forEach((otherCard) => {
+
+            if (otherCard === card) return;
+
+            const otherAudio =
+              otherCard.querySelector("[data-song]");
+
+            if (otherAudio) {
+              otherAudio.pause();
+
+              try {
+                otherAudio.currentTime = 0;
+              } catch (e) {}
+            }
+
+            otherCard.querySelectorAll("video").forEach((video) => {
+              video.pause();
+            });
+
+          });
+
+        });
+
+      }
+
+
+      /*
+        VIDEO
+      */
+
+      card.querySelectorAll("video").forEach((video) => {
+
+        video.addEventListener("play", function () {
+
+          cards.forEach((otherCard) => {
+
+            if (otherCard === card) return;
+
+            otherCard.querySelectorAll("video").forEach((otherVideo) => {
+              otherVideo.pause();
+            });
+
+            const otherAudio =
+              otherCard.querySelector("[data-song]");
+
+            if (otherAudio) {
+              otherAudio.pause();
+
+              try {
+                otherAudio.currentTime = 0;
+              } catch (e) {}
+            }
+
+          });
+
+        });
+
+      });
+
+    });
+
+  })();
+
+
+  /* ============================================================
+     7) EXTRA AUTOPLAY SETTINGS FOR VIDEOS
+     
+     نضمن إن الفيديوهات تكون جاهزة للـ autoplay.
+  ============================================================ */
+
+  (function prepareVideos() {
+
+    document.querySelectorAll("[data-card] video").forEach((video) => {
+
+      video.muted = true;
+      video.autoplay = true;
+      video.playsInline = true;
+
+      video.setAttribute("muted", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("playsinline", "");
+
+      /*
+        preload metadata بدل none علشان بداية الفيديو
+        تكون أسرع عند فتح الكارت.
+      */
+
+      if (video.getAttribute("preload") === "none") {
+        video.setAttribute("preload", "metadata");
+      }
+
+    });
+
+  })();
 
 </script>
-
-</body>
+  </body>
 </html>
